@@ -1,8 +1,8 @@
 import { Container } from "./styles";
 
-const Button = ({ white, children, handle }) => {
+const Button = ({ white, children, handle, size }) => {
   return (
-    <Container onClick={handle} white={white}>
+    <Container onClick={handle} size={size} white={white}>
       {children}
     </Container>
   );
