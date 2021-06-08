@@ -1,9 +1,14 @@
-
+import { Container } from "./styles";
+import Button from "../../components/Button";
 const Home = () => {
+  return (
+    <Container>
+      <div className="containerButtons">
+        <Button white={true}>LOG IN</Button>
+        <Button>REGISTER</Button>
+      </div>
+    </Container>
+  );
+};
 
-    return (
-     <h1>Teste Home</h1>
-    );
-  };
-  
-  export default Home;
+export default Home;
