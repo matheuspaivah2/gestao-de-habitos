@@ -15,8 +15,8 @@ export const Container = styled.div`
   }
   .containerButtons {
     display: flex;
-    margin-top: 3vh;
-    column-gap: 10px;
+    margin-top: 3.5vh;
+    column-gap: 5%;
     justify-content: center;
   }
 

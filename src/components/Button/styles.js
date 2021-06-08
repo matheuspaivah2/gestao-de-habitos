@@ -4,11 +4,12 @@ export const Container = styled.button`
   border: 2px solid black;
   border-radius: 4px;
   background-color: black;
-  width: 135px;
+  width: 40%;
   padding: 6px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
   color: ${({ white }) => (white ? "black" : "white")};
   background-color: ${({ white }) => (white ? "white" : "black")};
   font-size: 0.8rem;
+  cursor: pointer;
 `;
