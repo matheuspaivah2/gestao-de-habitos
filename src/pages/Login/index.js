@@ -1,7 +1,7 @@
 import{Link,useHistory} from "react-router-dom"
 import Button from "../../components/Button"
 import Input from "../../components/Input"
-import {Container,Content,AnimationContainer} from "./styles"
+import {Container,AnimationContainer} from "./styles"
 import {FiVoicemail, FiLock} from "react-icons/fi"
 import * as yup from 'yup';
 import { useForm } from "react-hook-form";
@@ -37,13 +37,11 @@ const Login = () => {
           
             <AnimationContainer>
               <form onSubmit={handleSubmit(handleSubmitFunction)}>
-                  <h1>Login</h1>
-                  <Input register={register} name="username" icon={FiVoicemail} placeholder="Seu username" error={errors.username?.message}/>
-                  <Input register={register} name="password" icon={FiLock} placeholder="Sua senha" type="password" error={errors.password?.message}/>
-                  <Content>
+                    <h1>Login</h1>
+                    <Input register={register} name="username" icon={FiVoicemail} placeholder="Seu username" error={errors.username?.message}/>
+                    <Input register={register} name="password" icon={FiLock} placeholder="Sua senha" type="password" error={errors.password?.message}/>
                     <Button type="submit" size={true}>Entrar</Button>
-                  </Content>
-                  <p>Não tem conta? Faça sua <Link to="/singup">Conta</Link></p>
+                    <p>Não tem conta? Faça sua <Link to="/singup">Conta</Link></p>
               </form>
             </AnimationContainer>
         </Container>
