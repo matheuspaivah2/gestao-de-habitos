@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
 
   figure {
     height: 85vh;
@@ -12,6 +13,13 @@ export const Container = styled.div`
       width: 100%;
       object-fit: cover;
     }
+  }
+  .logo {
+    z-index: 2;
+    position: absolute;
+    top: 3vh;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .containerButtons {
     display: flex;
