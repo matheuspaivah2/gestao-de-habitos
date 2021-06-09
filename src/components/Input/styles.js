@@ -2,8 +2,9 @@ import styled, {css} from "styled-components"
 
 export const Container = styled.div`
     text-align: left;
-    margin-top:15px;
-    margin-bottom: 10px;
+    padding: 6px;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
     div{
         span{
             color: var(--red)
@@ -42,7 +43,7 @@ export const InputContainer = styled.div`
         }
     }
     svg{
-        margin-right: 13px;
+        margin-right: 10px;
     }
 `;
 
