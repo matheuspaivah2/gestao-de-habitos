@@ -7,9 +7,10 @@ export const Container = styled.div`
     justify-content: center;
     text-align: center;
     flex-direction: column;
-`
-export const Content = styled.div`
-    width: 100%;
+    h1{
+        text-align:left;
+        margin-left: 6px;
+    }
 `
 const appearFromRight = keyframes`
     from{
@@ -29,8 +30,6 @@ export const AnimationContainer = styled.div`
     justify-content:center;
     animation: ${appearFromRight} 1s;
     form{
-        margin:80px;
-        width:340px;
         text-align:center;
     }
     h1{
