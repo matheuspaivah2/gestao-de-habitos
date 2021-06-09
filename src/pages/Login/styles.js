@@ -42,5 +42,14 @@ export const AnimationContainer = styled.div`
             color: var(--orange);
         }
     }
+    @media(min-width: 800px) {
+        form{
+            margin:80px;
+            width:540px;
+            text-align:center;
+        }
+    }
 `
+
+
 

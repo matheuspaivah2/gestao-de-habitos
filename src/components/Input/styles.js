@@ -18,7 +18,7 @@ export const InputContainer = styled.div`
     border: 2px solid var(--black);
     color: var(--gray);
     padding: 0.7rem;
-    width: 90vw;
+    width: 100%;
     display:flex;
     transition: 0.5s;
     
