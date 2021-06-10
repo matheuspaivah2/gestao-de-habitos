@@ -1,9 +1,11 @@
-
+import Menu from "../../components/Menu";
 
 const Dashboard = () => {
-
   return (
-   <h1>Teste Dashboard</h1>
+    <>
+      <Menu />
+      {/* <h1>Teste Dashboard</h1> */}
+    </>
   );
 };
 

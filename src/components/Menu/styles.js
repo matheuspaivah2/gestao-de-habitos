@@ -1,0 +1,58 @@
+import styled from "styled-components";
+import {
+  AppBar,
+  Toolbar,
+  withStyles,
+  SwipeableDrawer,
+  Drawer,
+} from "@material-ui/core";
+
+export const StyledToolBar = withStyles({
+  root: {
+    backgroundColor: "white",
+    width: "25vw",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    padding: "0",
+  },
+})(Toolbar);
+
+export const Container = withStyles({
+  root: {},
+})(SwipeableDrawer);
+
+export const ContainerButtons = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 50%;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+export const Button = styled.div`
+  cursor: pointer;
+  width: 70%;
+  height: 8vh;
+  background-image: url(${({ backImg }) => backImg});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 20px;
+`;
+
+export const LogoMenu = styled.figure`
+  cursor: pointer;
+  width: 100%;
+  height: 10%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 10px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+`;
