@@ -56,7 +56,7 @@ export const InputMenu = styled.div`
   border-radius: 1px;
   border: 2px solid var(--black);
   color: var(--gray);
-  padding: 0.7rem;
+  padding: 0.3rem;
   width: 100%;
   Button {
     font-size: 12px;
