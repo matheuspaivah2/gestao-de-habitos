@@ -3,10 +3,11 @@ import { Switch, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
-import Singup from "../pages/Singup";
+import SignUp from "../pages/SignUp";
 import Groups from "../pages/Groups";
 import Habits from "../pages/Habits";
 import MyAcount from "../pages/MyAcount";
+import PageNotFound from "../pages/NotFound";
 
 const Routes = () => {
   return (
@@ -14,10 +15,11 @@ const Routes = () => {
       <Route exact path="/" component={Home} />
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/login" component={Login} />
-      <Route path="/singup" component={Singup} />
+      <Route path="/signup" component={SignUp} />
       <Route path="/groups" component={Groups} />
       <Route path="/habits" component={Habits} />
       <Route path="/myacount" component={MyAcount} />
+      <Route component={PageNotFound} />
     </Switch>
   );
 };
