@@ -57,11 +57,10 @@ export const InputMenu = styled.div`
   border: 2px solid var(--black);
   color: var(--gray);
   padding: 0.3rem;
-  width: 100%;
+  width: 300px;
   Button {
     font-size: 12px;
     display: flex;
-    
     text-align: center;
   }
   Menu {
