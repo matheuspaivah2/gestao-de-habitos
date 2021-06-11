@@ -30,7 +30,7 @@ export const ContainerButtons = styled.div`
 `;
 export const Button = styled.div`
   cursor: pointer;
-  width: 70%;
+  width: 98%;
   height: 8vh;
   background-image: url(${({ backImg }) => backImg});
   background-size: contain;
