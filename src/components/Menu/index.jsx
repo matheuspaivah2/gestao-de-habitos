@@ -10,7 +10,14 @@ import Group from "../../assests/multiple-users-silhouette.png";
 import Rocket from "../../assests/rocket.png";
 import Logo from "../../assests/logo.png";
 import Settings from "../../assests/settings.png";
+import { useHistory } from "react-router-dom";
+
 const Menu = () => {
+  const history = useHistory();
+
+  const handleClick = (route) => {
+    history.push(route);
+  };
   return (
     <Container
       anchor="left"
@@ -19,15 +26,27 @@ const Menu = () => {
       // onOpen={toggleDrawer(anchor, true)}
     >
       <StyledToolBar>
-        <LogoMenu>
-          <img src={Logo} alt="" />
+        <LogoMenu onClick={() => handleClick("/dashboard")}>
+          <img src={Logo} alt="Logo" />
         </LogoMenu>
         <ContainerButtons>
-          <Button backImg={User}></Button>
-          <Button backImg={Group}></Button>
-          <Button backImg={Rocket}></Button>
+          <Button
+            backImg={User}
+            onClick={() => handleClick("/dashboard")}
+          ></Button>
+          <Button
+            backImg={Group}
+            onClick={() => handleClick("/groups")}
+          ></Button>
+          <Button
+            backImg={Rocket}
+            onClick={() => handleClick("/discovery")}
+          ></Button>
         </ContainerButtons>
-        <Button backImg={Settings}></Button>
+        <Button
+          backImg={Settings}
+          onClick={() => handleClick("/settings")}
+        ></Button>
       </StyledToolBar>
     </Container>
   );

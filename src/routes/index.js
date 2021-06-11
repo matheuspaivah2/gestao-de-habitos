@@ -7,7 +7,9 @@ import Singup from "../pages/Singup";
 import Groups from "../pages/Groups";
 import Habits from "../pages/Habits";
 import MyAcount from "../pages/MyAcount";
-
+import Discovery from "../pages/Discovery";
+import AcountSettings from "../pages/AcountSettings";
+import NotFound from "../pages/NotFound";
 const Routes = () => {
   return (
     <Switch>
@@ -18,6 +20,9 @@ const Routes = () => {
       <Route path="/groups" component={Groups} />
       <Route path="/habits" component={Habits} />
       <Route path="/myacount" component={MyAcount} />
+      <Route path="/discovery" component={Discovery} />
+      <Route path="/settings" component={AcountSettings} />
+      <Route component={NotFound} />
     </Switch>
   );
 };

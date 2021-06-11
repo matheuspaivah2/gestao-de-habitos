@@ -1,15 +1,12 @@
 import styled from "styled-components";
-import {
-  AppBar,
-  Toolbar,
-  withStyles,
-  SwipeableDrawer,
-  Drawer,
-} from "@material-ui/core";
+import { Toolbar, withStyles, SwipeableDrawer } from "@material-ui/core";
+import BackgroundMenu from "../../assests/backgroundMenu.jpg";
 
 export const StyledToolBar = withStyles({
   root: {
     backgroundColor: "white",
+    backgroundImage: `url(${BackgroundMenu})`,
+
     width: "25vw",
     height: "100%",
     display: "flex",
