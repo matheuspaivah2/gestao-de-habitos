@@ -40,7 +40,7 @@ const Login = () => {
                     <Input register={register} name="username" icon={FiUser} placeholder="Seu Username" error={errors.username?.message}/>
                     <Input register={register} name="password" icon={FiLock} placeholder="Sua Senha" type="password" error={errors.password?.message}/>
                     <Button type="submit" size={true}>Entrar</Button>
-                    <p>Não tem conta? Faça sua <Link to="/singup">Conta</Link></p>
+                    <p>Não tem conta? Faça sua <Link to="/signup">Conta</Link></p>
               </form>
             </AnimationContainer>
         </Container>

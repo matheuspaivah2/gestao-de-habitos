@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import Menu from "../../components/Menu";
+=======
+>>>>>>> Develop
 
 const Dashboard = () => {
   return (
