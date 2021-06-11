@@ -18,13 +18,9 @@ const Menu = () => {
   const handleClick = (route) => {
     history.push(route);
   };
+
   return (
-    <Container
-      anchor="left"
-      open="left"
-      //   onClose={}
-      // onOpen={toggleDrawer(anchor, true)}
-    >
+    <Container anchor="left" open="left" onClose="left" onOpen="left">
       <StyledToolBar>
         <LogoMenu onClick={() => handleClick("/dashboard")}>
           <img src={Logo} alt="Logo" />
