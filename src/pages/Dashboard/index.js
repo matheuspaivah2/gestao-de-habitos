@@ -1,8 +1,14 @@
-
+import{Link} from "react-router-dom"
 const Dashboard = () => {
-
   return (
-   <h1>Teste Dashboard</h1>
+    <>
+    
+
+    <p><Link to="/myacount">MyAcount</Link></p>
+    <p><Link to="/groups">Groups</Link></p>
+    <p><Link to="/habits">Habits</Link></p>
+    <p><Link to="/">Home</Link></p>
+   </>
   );
 };
 

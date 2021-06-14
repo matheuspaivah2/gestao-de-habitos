@@ -20,7 +20,7 @@ const Home = () => {
       </figure>
       <img src={Logo} alt="logo" className="logo"></img>
       <div className="containerButtons">
-        <Button white={true} handle={handleLogin}>
+        <Button white={true} size={"40%"}handle={handleLogin}>
           LOG IN
         </Button>
         <Button handle={handleRegister}>REGISTER</Button>
