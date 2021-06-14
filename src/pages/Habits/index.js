@@ -1,91 +1,68 @@
 import api from "../../services/api"
 import * as yup from 'yup'
-import { useForm } from "react-hook-form";
+import { useForm} from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, MenuItem, Modal, Fade, Backdrop, InputLabel } from '@material-ui/core'
+import { Button, MenuItem, Modal, Fade, Backdrop} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
-import Container, {AnimationContainer, Box, InputMenu, BackgroundHeading} from "./styles";
+import Container, {AnimationContainer, Box, InputMenu, BackgroundHeading, MySelect} from "./styles";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Input from '../../components/Input'
 import {toast} from 'react-toastify'
-import { useEffect, useState } from "react";
-import { Select } from '@material-ui/core'
-import jwt_decode from 'jwt-decode'
-import CardList from "../../components/CardList";
+import { useContext, useState } from "react";
+import CardList from "../../components/Habits/CardList";
+import { HabitsContext } from "../../providers/habits";
+
+const getModalStyle = () => {
+  const top = 50;
+  const left = 50;
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
 
 const useStyles = makeStyles((theme) => ({
-  modal: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   paper: {
+    position: 'absolute',
+    width: 300,
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
+  modal: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 }));
 
 const Habits = () => {
   const [open, setOpen] = useState(false);
-  const [difficulty, setDifficulty] = useState("")
-  const [frequency, setFrequency] = useState("")
-  const [category, setCategory] = useState("")
-  const [title, setTitle] = useState("")
-  const [user, setUser] = useState(0)
+  const [modalStyle] = useState(getModalStyle);
   const classes = useStyles();
-
-  const [data, setData] = useState({
-    
-    achieved: false,
-    how_much_achieved: 0,
-    user: user,
-  })
-
-
-  // envolver em useEffect
-  
-  
-
-    const handleDifficulty = (event) => {
-      setDifficulty(event.target.value);
-    };
-  
-    const handleFrequency = (event) => {
-      setFrequency(event.target.value)
-    };
-  
-    const handleCategoryForm = (e) => {
-      setCategory(e.target.value)
-    }
-  
-    const handleTitleForm = (e) => {
-      setTitle(e.target.value)
-    }
-
 
   const formSchema = yup.object().shape({
     title: yup.string().required("Campo obrigatório"),
     category: yup.string().required("Campo obrigatório"),
+    difficulty: yup.string().ensure().required("Campo obrigatorio"),
+    frequency: yup.string().ensure().required("Campo obrigatorio")
   })
 
-  const {register, handleSubmit, formState: {errors}} = useForm({
+  const { register, handleSubmit, formState: {errors}} = useForm({
     resolver: yupResolver (formSchema)
   })
-
+  
+  const { token, user_id } = useContext(HabitsContext);
   const onSubmitFunc = (data_user) => {
-    setData({...data, category: category, title: title, user: user, difficulty: difficulty,
-      frequency: frequency})
-    console.log(data)
-    const token = JSON.parse(localStorage.getItem('@GestãoDeHábitos:access'))
-    const decoded = jwt_decode(token);
-    setUser(decoded.user_id)
+    const data = { category: data_user.category, title: data_user.title, user: user_id, difficulty: data_user.difficulty, frequency: data_user.frequency, how_much_achieved: 0 }
     api.defaults.headers.authorization = `Bearer ${token}`;
     api.post("/habits/", data).then((res) => { 
-      console.log(res.data)
+      toast.success("Habit created")
     })
-    .catch((err) => toast.error('Erro ao criar habito'))
+    .catch((err) => toast.error('Error in creating the habit'))
   }
 
   const handleOpen = () => {
@@ -96,7 +73,37 @@ const Habits = () => {
     setOpen(false);
   };
 
-  
+  const body = (
+    <div style={modalStyle} className={classes.paper}>
+      <Fade in={open}>
+        <form onSubmit={handleSubmit(onSubmitFunc)}>
+        <Input name="title" placeholder="Title" required register={register} error={errors.title?.message}/>
+        <Input name="category" placeholder="Category" required register={register} error={errors.title?.message}/>         
+        <label>Difficulty</label>   
+        <MySelect name="difficulty" {...register('difficulty')}>
+          <option value=""></option>
+          <option value="very easy">very easy</option>
+          <option value="easy">easy</option>
+          <option value="moderated">moderated</option>
+          <option value="hard">hard</option>
+          <option value="very hard">very hard</option>
+        </MySelect>
+        <label>Frequency</label>
+        <MySelect name="frequency" {...register('frequency')}>
+          <option value=""></option>
+          <option value="three in three hours">three in three hours</option>
+          <option value="daily">daily</option>
+          <option value="weekly">weekly</option>
+        </MySelect>
+        <MenuItem style={{display: "flex", justifyContent: "center"}}>
+        <Button type="submit">Ok</Button>
+        <Button onClick={handleClose}>Cancel</Button>
+        </MenuItem>
+      </form>
+      </Fade>  
+    </div>
+  );
+
     return (
     <>
     <BackgroundHeading>
@@ -107,7 +114,7 @@ const Habits = () => {
             <Box>
               <InputMenu>
               <Button onClick={handleOpen}>
-                Criar Novo Habito
+                Create a new habit
               </Button>
               <ExpandMoreIcon onClick={handleOpen}/>
               <Modal
@@ -120,45 +127,7 @@ const Habits = () => {
                 BackdropComponent={Backdrop}
                 BackdropProps={{
                 timeout: 500,}}>
-                  <Fade in={open}>
-
-                    <form onSubmit={handleSubmit(onSubmitFunc)}>
-                    <Input name="title" placeholder="Hábito" required register={register} error={errors.title?.message} onChange={(e) => handleCategoryForm(e) }/>
-                    <Input name="category" placeholder="Categoria" required register={register} error={errors.title?.message} onChange={(e) => handleTitleForm(e) }/>
-                  
-                    <InputLabel>Dificuldade</InputLabel>
-                    <Select
-                      label="Difficulty"
-                      value={difficulty}
-                      onChange={(e) => handleDifficulty(e)}
-                      fullWidth>
-                      <MenuItem value="muito facil">Muito Fácil</MenuItem>
-                      <MenuItem value="facil">Fácil</MenuItem>
-                      <MenuItem value="moderado">Moderado</MenuItem>
-                      <MenuItem value="dificil">Difícil</MenuItem>
-                      <MenuItem value="muito dificil">Muito Difícil</MenuItem>
-                    </Select>
-                    
-                    <InputLabel>Frequencia</InputLabel>
-                    <Select
-                      labelId="Frequency"
-                      value={frequency}
-                      onChange={handleFrequency}
-                      fullWidth>
-                      <MenuItem value="Diariamente">Diariamente</MenuItem>
-                      <MenuItem value="Semanalmente">Semanalmente</MenuItem>
-                      <MenuItem value="De 1 em 1 horas">De 1 em 1 horas</MenuItem>
-                      <MenuItem value="De 3 em 3 horas">De 3 em 3 horas</MenuItem>
-                      <MenuItem value="personalizado">personalizado</MenuItem>
-                    </Select>
-                    
-                    <MenuItem style={{display: "flex", justifyContent: "center"}}>
-                    <Button type="submit">Ok</Button>
-                    <Button onClick={handleClose}>Cancelar</Button>
-                    </MenuItem>
-                  </form>
-
-                </Fade>  
+                  {body}
               </Modal>
             </InputMenu>
           </Box>

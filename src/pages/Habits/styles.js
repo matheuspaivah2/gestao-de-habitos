@@ -72,10 +72,23 @@ export const BackgroundHeading = styled.div`
   background-color: #3AACB6;
   border-radius: 0 0 30px 30px;
   width: 200px;
+  height: 50px;
+  line-height: 50px;
   margin: 0 auto;
   h1 {
     color: #fff;
   }
+`;
+
+export const MySelect = styled.select`
+  background: var(--white);
+    border-radius: 1px;
+    border: 2px solid var(--black);
+    color: var(--gray);
+    padding: 0.7rem;
+    width: 100%;
+    display:flex;
+    transition: 0.5s;
 `;
 
 export default Container;
