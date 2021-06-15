@@ -39,7 +39,7 @@ const CardList = () => {
               <div style={{ width: 130, height: 130, margin: "0 auto"}}>
                 <CircularProgressbar value={habit.how_much_achieved} text={`${habit.how_much_achieved}%`} />
               </div>
-              <ModalUpdate/>
+              <ModalUpdate getHabits={getHabits} habitId={habit.id} how_much_achieved={habit.how_much_achieved}/>
               </ul>
             </div>
           </div>)}
