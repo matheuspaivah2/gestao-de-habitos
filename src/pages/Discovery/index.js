@@ -43,7 +43,7 @@ const Discovery = () => {
                 <button onClick={(results ? handleResults : getGroups)}>{results ? "Clear" : "Search"}</button>
             </div>
             <span><strong>{results ? "Results" : "Recommeded Groups" }</strong></span>
-            <Groups showArrows={true} showThumbs={false}>
+            <Groups showThumbs={false}>
                 <div className="groups">
                     {(results ? listGroups : recomGroups.slice(0,4)).map((group, index) => (
                         <CardDiscovery key={index} group={group}/>
