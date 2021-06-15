@@ -1,8 +1,10 @@
+import { useState } from "react";
 import api from "../../services/api";
 import { Container, Group } from "./styles";
 
 const CardDiscovery = ({ group }) => {
     const { name, description, category, id } = group;
+    const [token, setToken] = useState()
     
     console.log(group)
     
