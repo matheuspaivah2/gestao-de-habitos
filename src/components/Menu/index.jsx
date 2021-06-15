@@ -43,7 +43,7 @@ const Menu = () => {
         </ContainerButtons>
         <Button
           backImg={Settings}
-          onClick={() => handleClick("/settings")}
+          onClick={() => handleClick("/myacount")}
         ></Button>
       </StyledToolBar>
     </Container>

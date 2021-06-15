@@ -2,10 +2,10 @@ import { Container } from "./styles";
 import Button from "../../components/Button";
 import BackgroundHome from "../../assests/back2.jpg";
 import Logo from "../../assests/logoHabits.png";
-import { useHistory } from "react-router";
+import { Redirect, useHistory } from "react-router";
 const Home = () => {
   const history = useHistory();
-
+  const token = localStorage.getItem("@GestãoDeHábitos:access") || false;
   const handleLogin = () => {
     history.push("/login");
   };
@@ -13,6 +13,10 @@ const Home = () => {
   const handleRegister = () => {
     history.push("/signup");
   };
+  
+  if(token){
+    return <Redirect to="/dashboard"/>
+  }
   return (
     <Container>
       <figure>

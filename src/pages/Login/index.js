@@ -1,4 +1,4 @@
-import{Link,useHistory} from "react-router-dom"
+import{Link,Redirect,useHistory} from "react-router-dom"
 import Button from "../../components/Button"
 import Input from "../../components/Input"
 import {Container,AnimationContainer} from "./styles"
@@ -10,7 +10,6 @@ import api from "../../services/api"
 import{ toast } from 'react-toastify'
 
 const Login = () => {
-
     const forSchema = yup.object().shape({
         username: yup.string().required("Username Obrigatótio"),
         password: yup.string().required("Campo Obrigatório"),
@@ -30,7 +29,10 @@ const Login = () => {
         })
         .catch((err) => toast.error('Erro ao logar, Login e/ou senha inválidos'))
     }
-
+    const token = localStorage.getItem("@GestãoDeHábitos:access") || false;
+    if(token){
+      return <Redirect to="/dashboard"/>
+    }
 
     return(
         <Container>
