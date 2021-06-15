@@ -32,8 +32,8 @@ export const AnimationContainer = styled.div`
     form{
         text-align:center;
     }
-    h1{
-        margin-bottom:32px;
+    h3{
+        text-align: left;
     }
     p{
         margin-top:8px;
