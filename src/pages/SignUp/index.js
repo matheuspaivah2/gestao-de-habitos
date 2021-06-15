@@ -1,4 +1,4 @@
-import{Link,useHistory} from "react-router-dom"
+import{useHistory,Link} from "react-router-dom"
 import Button from "../../components/Button"
 import Input from "../../components/Input"
 import {Container,AnimationContainer} from "./styles"
@@ -9,7 +9,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import api from "../../services/api"
 import{ toast } from 'react-toastify'
 
-const Singup = () => {
+const SignUp = () => {
 
     const forSchema = yup.object().shape({
         username: yup.string().required("Username Obrigatótio"),
@@ -42,9 +42,10 @@ const Singup = () => {
                     <Input register={register} name="email" icon={FiVoicemail} placeholder="Seu Email" error={errors.email?.message}/>
                     <Input register={register} name="password" icon={FiLock} placeholder="Sua Senha" type="password" error={errors.password?.message}/>
                     <Button type="submit" size={true}>Cadastrar</Button>
+                    <p>Já tem conta? Entre em sua <Link to="/login">Conta</Link></p>
               </form>
             </AnimationContainer>
         </Container>
     )
 }
-export default Singup
+export default SignUp

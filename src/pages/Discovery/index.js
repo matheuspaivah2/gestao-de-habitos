@@ -1,13 +1,12 @@
-import CardGroup from "../../components/CardGroup";
-import { Container } from "./styles";
+import CardDiscovery from "../../components/CardDiscovery";
+import { Container, Groups } from "./styles";
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { useGroups } from "../../providers/Groups";
 
-
 const Discovery = () => {
     const {groups} = useGroups();
-    const [recomGroups, setRecomGroups] = useState([])
+    const [recomGroups, setRecomGroups] = useState([]);
     const [listGroups, setListGroups]  = useState([]);
     const [input, setInput] = useState("");
     const [type, setType] = useState("category");
@@ -44,11 +43,23 @@ const Discovery = () => {
                 <button onClick={(results ? handleResults : getGroups)}>{results ? "Clear" : "Search"}</button>
             </div>
             <span><strong>{results ? "Results" : "Recommeded Groups" }</strong></span>
-            <div className="groups" >
-                {(results ? listGroups : recomGroups.slice(0,12)).map((group, index) => (
-                    <CardGroup key={index} group={group}/>
-                ))}
-            </div>
+            <Groups showArrows={true} showThumbs={false}>
+                <div className="groups">
+                    {(results ? listGroups : recomGroups.slice(0,4)).map((group, index) => (
+                        <CardDiscovery key={index} group={group}/>
+                    ))}
+                </div>
+                <div className="groups">
+                    {(results ? listGroups : recomGroups.slice(4,8)).map((group, index) => (
+                        <CardDiscovery key={index} group={group}/>
+                    ))}
+                </div>
+                <div className="groups">
+                    {(results ? listGroups : recomGroups.slice(8,12)).map((group, index) => (
+                        <CardDiscovery key={index} group={group}/>
+                    ))}
+                </div>
+            </Groups>
         </Container>
     );
 }

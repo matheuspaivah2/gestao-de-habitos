@@ -9,13 +9,26 @@ export const Container = styled.div `
     height: 45vw;
     border: 2px solid var(--boldgreen);
     border-radius: 10px;
-    margin-bottom: 2vw;
+    margin-bottom: 2.5vw;
 
     h4 {
         background-color: var(--boldgreen);
         color: var(--white); 
         width: 35vw;
-        border-radius: 0 0 100px 100px;
-        padding: 5px 0;
+        border-radius: 0 0 80px 80px;
+        padding-top: 2px ;
+        overflow: hidden;
+        height: 7vw;
     }
+
+    .description {
+        height: 28vw;
+        display: flex;
+        align-items: center;
+        overflow: scroll;
+    }
+`;
+
+export const Group = styled.div`
+
 `;

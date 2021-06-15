@@ -11,7 +11,7 @@ const Home = () => {
   };
 
   const handleRegister = () => {
-    history.push("/singup");
+    history.push("/signup");
   };
   return (
     <Container>

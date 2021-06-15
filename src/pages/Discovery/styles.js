@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 export const Container = styled.div `
     display: flex;
@@ -18,7 +20,7 @@ export const Container = styled.div `
         justify-content: center;
 
         input {
-            width: 40%;
+            width: 43vw;
             height: 10vw;
             border-radius: 5px 0 0 5px;
             border: 0;
@@ -29,7 +31,7 @@ export const Container = styled.div `
         }
 
         select {
-            width: 30vw;
+            width: 25vw;
             height: 10vw;
             background-color: var(--boldgreen);
             color: var(--white); 
@@ -57,9 +59,23 @@ export const Container = styled.div `
         font-size: 18px;
     }
 
+    
+`;
+export const Groups = styled(Carousel)`
+    width: 100vw;
+    height: 60vh;
     .groups {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
+    > div {
+        height: 60vh;
+    }
+    .carousel-status {
+        visibility: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    
 `;
