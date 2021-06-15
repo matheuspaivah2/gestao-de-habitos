@@ -6,14 +6,16 @@ export const HabitsContext = createContext();
 
 const HabitsProvider = ({children}) => {
   const [user_id, setUser_id] = useState("")
-  const [token, setToken] = useState("")
+  const [token, setToken] = useState(null)
 
   const getToken = () => {
     setToken(JSON.parse(localStorage.getItem('@GestãoDeHábitos:access')))
     api.defaults.headers.authorization = `Bearer ${token}`;
     // user id
-    const decoded = jwt_decode(JSON.parse(localStorage.getItem('@GestãoDeHábitos:access')))
-    setUser_id(decoded.user_id)
+    if (token !== null) {
+      const decoded = jwt_decode(JSON.parse(localStorage.getItem('@GestãoDeHábitos:access')))
+      setUser_id(decoded.user_id)
+    }
   }
 
   useEffect (() => {
