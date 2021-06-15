@@ -1,6 +1,8 @@
+
+import { Backdrop, Fade, makeStyles, Modal } from "@material-ui/core";
 import axios from "axios";
 import { useState } from "react";
-import api from "../../services/api";
+import { toast } from "react-toastify";
 import { Container, Group } from "./styles";
 
 const CardDiscovery = ({ group }) => {
@@ -9,25 +11,99 @@ const CardDiscovery = ({ group }) => {
     const [token] = useState(JSON.parse(localStorage.getItem("@GestãoDeHábitos:access")) || "");
     
     const joinGroup = () => {
-        axios.post(`https://kabit-api.herokuapp.com/groups/${id}/subscribe/`, {
+        axios.post(`https://kabit-api.herokuapp.com/groups/${id}/subscribe/`, null, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 },
             })
-            .then((response) => console.log(response))
-            .catch((err) => console.log(err))
+            .then((response) => toast.success("Joined Group!"))
+            .catch((err) => toast.error("Error!"))
     }
+
+    const useStyles = makeStyles((theme) => ({
+        modal: {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "",
+        },
+        paper: {
+          backgroundColor: theme.palette.background.paper,
+          border: "2px solid #000",
+          boxShadow: theme.shadows[5],
+          margin: "0 auto",
+          display: "flex",
+          width: "90%",
+          borderRadius: "4px",
+          padding: "0",
+        },
+      }));
+      const classes = useStyles();
 
     return(
         <Container onClick={() => setToggle(!toggle)}>
-            <h4>{name}</h4>
-            <p className="description">{description}</p>
-            <p><strong>{category}</strong></p>
-            {toggle && <Group>
+            
+                    <h4>{name}</h4>
+                    <p className="description">{description}</p>
+                    <p><strong>{category}</strong></p>
                 
-                <button onClick={joinGroup}>Join Group</button>
-                <button onClick={() => setToggle(!toggle)}>Close</button>
-            </Group>}
+            {toggle && 
+            <Modal
+                aria-labelledby="transition-modal-title"
+                aria-describedby="transition-modal-description"
+                className={classes.modal}
+                open={toggle}
+                // onClose={!toggle}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                    timeout: 500,
+                }}
+            >
+                <Fade in={toggle} >
+                    <div className={classes.paper}>
+                        <Group>
+                            <div className="container--NameGroup">
+                                <strong>{group.name}</strong>
+                            </div>
+                            <p>{group.description}</p>
+                            <span className="category">{group.category}</span>
+                            <div className="container__InfoGroup">
+                                <div className="goals box">
+                                <h3>Goals</h3>
+                                <ul className="list__goals list">
+                                    {group.goals &&
+                                    group.goals.map((goal) => (
+                                        <li key={goal.id} >
+                                        {goal.title}
+                                        </li>
+                                    ))}
+                                    {!group.goals[0] && <li key={1}>Empty List</li>}
+                                </ul>
+                                </div>
+                                <div className="activities box">
+                                <h3>Activities</h3>
+                                <ul className="list__activities list">
+                                    {group.activities &&
+                                    group.activities.map((activity) => (
+                                        <li key={group.id} >
+                                        {activity.title}
+                                        </li>
+                                    ))}
+                                    {!group.activities[0] && <li key={1}>Empty List</li>}
+                                </ul>
+                                </div>
+                            </div>
+                            <div className="buttons__Add">
+                                <button onClick={joinGroup}>Join Group</button>
+                                <button onClick={() => setToggle(!toggle)}>Close</button>
+                            </div>
+                        </Group>
+                    </div>
+                    
+                </Fade>
+                
+            </Modal>}
         </Container>
     );
 }

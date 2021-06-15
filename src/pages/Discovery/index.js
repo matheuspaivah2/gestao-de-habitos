@@ -45,19 +45,28 @@ const Discovery = () => {
             <span><strong>{results ? "Results" : "Recommeded Groups" }</strong></span>
             <Groups showThumbs={false}>
                 <div className="groups">
-                    {(results ? listGroups : recomGroups.slice(0,4)).map((group, index) => (
-                        <CardDiscovery key={index} group={group}/>
-                    ))}
+                    {results 
+                        ? listGroups.slice(0,4).map((group, index) => (
+                            <CardDiscovery key={index} group={group}/> ))
+                        : recomGroups.slice(0,4).map((group, index) => (
+                            <CardDiscovery key={index} group={group}/> )
+                    )}
                 </div>
                 <div className="groups">
-                    {(results ? listGroups : recomGroups.slice(4,8)).map((group, index) => (
-                        <CardDiscovery key={index} group={group}/>
-                    ))}
+                    {results 
+                        ? listGroups.slice(4,8).map((group, index) => (
+                            <CardDiscovery key={index} group={group}/> ))
+                        : recomGroups.slice(4,8).map((group, index) => (
+                            <CardDiscovery key={index} group={group}/> )
+                    )}
                 </div>
                 <div className="groups">
-                    {(results ? listGroups : recomGroups.slice(8,12)).map((group, index) => (
-                        <CardDiscovery key={index} group={group}/>
-                    ))}
+                    {results 
+                        ? listGroups.slice(8,12).map((group, index) => (
+                            <CardDiscovery key={index} group={group}/> ))
+                        : recomGroups.slice(8,12).map((group, index) => (
+                            <CardDiscovery key={index} group={group}/> )
+                    )}
                 </div>
             </Groups>
         </Container>

@@ -63,7 +63,6 @@ export const Container = styled.div `
 `;
 export const Groups = styled(Carousel)`
     width: 100vw;
-    height: 60vh;
     .groups {
         display: flex;
         flex-wrap: wrap;
