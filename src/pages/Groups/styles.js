@@ -9,7 +9,7 @@ export const Container = styled.div`
     margin: 0 auto;
     height: 7vh;
     width: 70%;
-    background-color: #056479;
+    background-color: #0a315d;
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 100px;
     display: flex;
@@ -28,7 +28,7 @@ export const Button = styled.button`
   width: 90%;
   padding: 1.5vh;
   color: white;
-  background-color: black;
+  background-color: #0a315d;
   font-size: 1rem;
   border-radius: 4px;
   margin: 0 auto;
