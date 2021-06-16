@@ -6,6 +6,7 @@ import SignUp from "../pages/SignUp";
 import Groups from "../pages/Groups";
 import Habits from "../pages/Habits";
 import MyAcount from "../pages/MyAcount";
+import Discovery from "../pages/Discovery";
 import PageNotFound from "../pages/NotFound";
 
 const Routes = () => {
@@ -18,6 +19,7 @@ const Routes = () => {
       <Route path="/groups" component={Groups} />
       <Route path="/habits" component={Habits} />
       <Route path="/myacount" component={MyAcount} />
+      <Route path="/discovery" component={Discovery}/>
       <Route component={PageNotFound} />
     </Switch>
   );
