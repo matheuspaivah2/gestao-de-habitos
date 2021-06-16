@@ -7,20 +7,30 @@ export const Container = styled.div`
   width: 100%;
   height: 40vh;
   padding: 0;
+  justify-content: space-evenly;
+  align-items: center;
 
   .container__nameGoal {
     margin: 0;
     height: 9vh;
     width: 100%;
-    background-color: #056479;
+    background-color: #0a315d;
+
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid black;
+    padding: 6vw;
+    padding-right: 4vw;
     strong {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: white;
       font-weight: bolder;
+    }
+    div {
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
     }
   }
 
@@ -43,25 +53,15 @@ export const Container = styled.div`
       font-size: 1rem;
     }
   }
-
-  .container__buttons {
-    width: 100%;
-    display: flex;
-    column-gap: 3vw;
-    justify-content: center;
-    align-items: center;
-    margin-top: auto;
-    margin-bottom: 1vh;
-
-    button {
-      width: 45%;
-      border: none;
-      background-color: #056479;
-      border-radius: 4px;
-      color: white;
-      font-size: 1rem;
-      font-weight: bolder;
-      padding: 8px;
-    }
+  button {
+    width: 60%;
+    border: 2px solid black;
+    background-color: #0a315d;
+    border-radius: 4px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    padding: 6px;
+    font-family: "Londrina Solid", cursive;
   }
 `;

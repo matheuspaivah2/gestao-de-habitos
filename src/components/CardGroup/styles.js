@@ -15,15 +15,14 @@ export const Container = styled.div`
   .container--NameGroup {
     margin: 0 auto;
     height: 7vh;
-    width: 70%;
+    width: 100%;
     background-color: #0a315d;
-    border-bottom-left-radius: 100px;
-    border-bottom-right-radius: 100px;
+    border-bottom: 2px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     strong {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       color: white;
       font-weight: 300;
       width: 80%;
@@ -35,8 +34,10 @@ export const Container = styled.div`
   p {
     overflow: hidden;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-top: 1vh;
+    width: 90%;
+    margin: 1vh auto;
   }
 
   .container__InfoGroup {
@@ -45,11 +46,12 @@ export const Container = styled.div`
     width: 100%;
     justify-content: center;
     column-gap: 2%;
-    height: 49vh;
+    height: 47vh;
   }
   .category {
     font-weight: bolder;
     margin-top: 1vh;
+    font-size: 1.2rem;
   }
 
   .box {
@@ -62,7 +64,7 @@ export const Container = styled.div`
     height: 95%;
 
     h3 {
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
 
     .list {
@@ -88,14 +90,14 @@ export const Container = styled.div`
   .buttons__Add {
     display: flex;
     width: 100%;
-    justify-content: space-evenly;
-
+    justify-content: center;
+    column-gap: 2%;
     button {
-      width: 43%;
+      width: 45%;
       border: none;
       background-color: #0a315d;
       color: white;
-      border-radius: 4px;
+      border-radius: 2px;
       padding: 4px;
       font-size: 1rem;
       font-weight: bolder;
