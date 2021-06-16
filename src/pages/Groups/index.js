@@ -11,13 +11,13 @@ const Groups = () => {
   };
   return (
     <Container>
-      {/* <Menu /> */}
       <div className="container__PageName">
         <strong>Groups</strong>
       </div>
       <Button onClick={handleNewGroup}>New Group</Button>
       <CardGroupList />
       <NewGroup openNewGroup={openNewGroup} setOpenNewGroup={setOpenNewGroup} />
+      {/* <Menu /> */}
     </Container>
   );
 };

@@ -31,7 +31,7 @@ const CardGroupList = () => {
   return (
     <Container showThumbs={false} autoPlay={false}>
       {groups[0] &&
-        groups.map((group) => <CardGroup key={group.id} group={group} s />)}
+        groups.map((group) => <CardGroup key={group.id} group={group} />)}
     </Container>
   );
 };
