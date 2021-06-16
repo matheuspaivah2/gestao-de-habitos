@@ -73,7 +73,7 @@ export const Container = styled.div`
       border-radius: 4px;
       padding: 4px;
       overflow: scroll;
-
+      background-color: #ffffffa6;
       li {
         color: black;
         font-size: 1rem;

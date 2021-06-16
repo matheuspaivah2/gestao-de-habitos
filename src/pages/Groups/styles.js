@@ -13,6 +13,7 @@ export const Container = styled.div`
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     border: 2px solid black;
+    border-top: none;
     display: flex;
     justify-content: center;
     align-items: center;
