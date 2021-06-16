@@ -18,6 +18,7 @@ import { toast } from "react-toastify";
 import { useContext, useState } from "react";
 import CardList from "../../components/Habits/CardList";
 import { HabitsContext } from "../../providers/habits";
+import Menu from "../../components/Menu";
 
 const getModalStyle = () => {
   const top = 50;
@@ -95,6 +96,7 @@ const Habits = () => {
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
+      
       <Fade in={open}>
         <form onSubmit={handleSubmit(onSubmitFunc)}>
           <Input
@@ -141,6 +143,7 @@ const Habits = () => {
       <BackgroundHeading>
         <strong>Habits</strong>
       </BackgroundHeading>
+      <Menu />
       <Container>
         <AnimationContainer>
           {/* <Box> */}

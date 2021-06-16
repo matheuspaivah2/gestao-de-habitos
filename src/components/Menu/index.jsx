@@ -2,6 +2,7 @@ import {
   Container,
   StyledToolBar,
   Button,
+  ButtonLogout,
   ContainerButtons,
   LogoMenu,
   ContMenu,
@@ -11,6 +12,7 @@ import Group from "../../assests/multiple-users-silhouette.png";
 import Rocket from "../../assests/rocket.png";
 import Logo from "../../assests/logoBlue.png";
 import Settings from "../../assests/settings.png";
+import Logout from "../../assests/logout.png";
 import { useHistory } from "react-router-dom";
 
 const Menu = () => {
@@ -43,8 +45,14 @@ const Menu = () => {
           </ContainerButtons>
           <Button
             backImg={Settings}
-            onClick={() => handleClick("/settings")}
+            onClick={() => handleClick("/myacount")}
           ></Button>
+
+          <ButtonLogout
+            backImg={Logout}
+            onClick={()=>(localStorage.removeItem('@GestãoDeHábitos:access'), history.push("/login"))} >
+          </ButtonLogout>
+
         </ContMenu>
       </StyledToolBar>
     </Container>

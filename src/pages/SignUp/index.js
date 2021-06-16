@@ -1,4 +1,4 @@
-import{useHistory,Link} from "react-router-dom"
+import{useHistory,Link, Redirect} from "react-router-dom"
 import Button from "../../components/Button"
 import Input from "../../components/Input"
 import {Container,AnimationContainer} from "./styles"
@@ -8,9 +8,11 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import api from "../../services/api"
 import{ toast } from 'react-toastify'
+import { useContext } from "react"
+import { HabitsContext } from "../../providers/habits"
 
 const SignUp = () => {
-
+    const { token } = useContext(HabitsContext);
     const forSchema = yup.object().shape({
         username: yup.string().required("Username Obrigatótio"),
         email: yup.string().required("Email Obrigatótio").email("Email Inválido"),
@@ -32,7 +34,9 @@ const SignUp = () => {
         .catch((err) => toast.error('Erro ao criar usuário'))
     }
 
-
+    if(token){
+        return <Redirect to="/dashboard"/>
+    }
     return(
         <Container>
             <AnimationContainer>

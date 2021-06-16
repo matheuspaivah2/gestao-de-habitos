@@ -34,7 +34,18 @@ export const Button = styled.div`
   width: 98%;
   height: 8vh;
   background-image: url(${({ backImg }) => backImg});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 20px;
+`;
 
+export const ButtonLogout = styled.div`
+  cursor: pointer;
+  width: 98%;
+  height: 8vh;
+  background-image: url(${({ backImg }) => backImg});
+  margin-top: 100px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

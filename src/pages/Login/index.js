@@ -1,4 +1,4 @@
-import{Link,useHistory} from "react-router-dom"
+import{Redirect,Link,useHistory} from "react-router-dom"
 import Button from "../../components/Button"
 import Input from "../../components/Input"
 import {Container,AnimationContainer} from "./styles"
@@ -29,6 +29,10 @@ const Login = () => {
             return history.push('/dashboard')
         })
         .catch((err) => toast.error('Erro ao logar, Login e/ou senha inválidos'))
+    }
+    const token = localStorage.getItem("@GestãoDeHábitos:access") || false;
+    if(token){
+      return <Redirect to="/dashboard"/>
     }
 
 
