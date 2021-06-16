@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+    font-family: 'Londrina Solid', cursive;
 }
 :root{
         --white: #f5f5f5;

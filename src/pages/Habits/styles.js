@@ -1,8 +1,8 @@
-import styled, { keyframes } from "styled-components"
+import styled, { keyframes } from "styled-components";
 
 const Container = styled.div`
   margin-top: 20px;
-  display:flex;
+  display: flex;
   justify-content: center;
   text-align: center;
   flex-direction: column;
@@ -11,35 +11,35 @@ const Container = styled.div`
 const appearFromRight = keyframes`
   from {
     opacity:0;
-    transform: translateX(-150px)
+    /* transform: translateX(-150px) */
   }
   to {
     opacity: 1;
-    transform: translateX(0px)
+    /* transform: translateX(0px) */
   }
 
-`
+`;
 
 export const AnimationContainer = styled.div`
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content:center;
-    animation: ${appearFromRight} 1s;
-    form{
-        width:250px;
-        text-align:center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: ${appearFromRight} 1s;
+  form {
+    width: 250px;
+    text-align: center;
+  }
+  h1 {
+    margin-bottom: 32px;
+  }
+  p {
+    margin-top: 8px;
+    a {
+      font-weight: bold;
+      color: var(--orange);
     }
-    h1{
-        margin-bottom:32px;
-    }
-    p{
-        margin-top:8px;
-        a{
-            font-weight: bold;
-            color: var(--orange);
-        }
-    }
+  }
 `;
 
 export const Box = styled.div`
@@ -69,26 +69,44 @@ export const InputMenu = styled.div`
 `;
 
 export const BackgroundHeading = styled.div`
-  background-color: #3AACB6;
-  border-radius: 0 0 30px 30px;
-  width: 200px;
-  height: 50px;
-  line-height: 50px;
   margin: 0 auto;
-  h1 {
-    color: #fff;
+  height: 7vh;
+  width: 70%;
+  background-color: #056479;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  strong {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 400;
   }
 `;
 
 export const MySelect = styled.select`
   background: var(--white);
-    border-radius: 1px;
-    border: 2px solid var(--black);
-    color: var(--gray);
-    padding: 0.7rem;
-    width: 100%;
-    display:flex;
-    transition: 0.5s;
+  border-radius: 1px;
+  border: 2px solid var(--black);
+  color: var(--gray);
+  padding: 0.7rem;
+  width: 100%;
+  display: flex;
+  transition: 0.5s;
 `;
 
 export default Container;
+
+export const Button = styled.button`
+  border: none;
+  width: 90%;
+  padding: 1.5vh;
+  color: white;
+  background-color: black;
+  font-size: 1rem;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 3vh;
+  text-align: left;
+`;

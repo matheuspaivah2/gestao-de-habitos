@@ -5,16 +5,18 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   border: 2px solid black;
-  border-radius: 8px;
+  border-radius: 4px;
   margin: 0 auto;
   min-height: 350px;
   margin-top: 4vh;
   height: 70vh;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='79' height='79' viewBox='0 0 200 200'%3E%3Cpolygon fill='%23DCEFFA' points='100 0 0 100 100 100 100 200 200 100 200 0'/%3E%3C/svg%3E");
   .container--NameGroup {
     margin: 0 auto;
     height: 7vh;
     width: 70%;
-    background-color: black;
+    background-color: #0a315d;
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 100px;
     display: flex;
@@ -91,7 +93,7 @@ export const Container = styled.div`
     button {
       width: 43%;
       border: none;
-      background-color: black;
+      background-color: #0a315d;
       color: white;
       border-radius: 4px;
       padding: 4px;
