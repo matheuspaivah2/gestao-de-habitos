@@ -34,4 +34,5 @@ export const Button = styled.button`
   margin: 0 auto;
   margin-top: 3vh;
   text-align: left;
+  font-family: "Londrina Solid", cursive;
 `;

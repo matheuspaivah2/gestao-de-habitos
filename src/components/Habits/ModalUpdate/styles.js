@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  width: 43%;
+  width: 50%;
   border: none;
-  background-color: black;
+  background-color: #0a315d;
   color: white;
   border-radius: 4px;
   padding: 8px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bolder;
   cursor: pointer;
+  font-family: "Londrina Solid", cursive;
 `;
 
 export const Container = styled.div``;
-
 
 export const MySelect = styled.select`
   background: var(--white);

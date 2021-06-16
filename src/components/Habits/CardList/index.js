@@ -23,6 +23,8 @@ const CardList = () => {
       getHabits();
     }
   }, [token, habits]);
+
+  
   console.log(habits);
   return (
     <Container showThumbs={false} autoPlay={false} infiniteLoop>

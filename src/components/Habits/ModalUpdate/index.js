@@ -83,48 +83,48 @@ const ModalUpdate = () => {
       .catch((err) => toast.error("Error in creating the habit"));
   };
 
-  <div style={modalStyle} className={classes.paper}>
-    <Fade in={open}>
-      <form onSubmit={handleSubmit(onSubmitFunc)}>
-        <Input
-          name="title"
-          placeholder="Title"
-          required
-          register={register}
-          error={errors.title?.message}
-        />
-        <Input
-          name="category"
-          placeholder="Category"
-          required
-          register={register}
-          error={errors.title?.message}
-        />
-        <label>Difficulty</label>
-        <MySelect name="difficulty" {...register("difficulty")}>
-          <option value=""></option>
-          <option value="very easy">very easy</option>
-          <option value="easy">easy</option>
-          <option value="moderated">moderated</option>
-          <option value="hard">hard</option>
-          <option value="very hard">very hard</option>
-        </MySelect>
-        <label>Frequency</label>
-        <MySelect name="frequency" {...register("frequency")}>
-          <option value=""></option>
-          <option value="three in three hours">three in three hours</option>
-          <option value="daily">daily</option>
-          <option value="weekly">weekly</option>
-        </MySelect>
-        <MenuItem style={{ display: "flex", justifyContent: "center" }}>
-          <Button type="submit">Ok</Button>
-          <Button onClick={handleClose}>Cancel</Button>
-        </MenuItem>
-      </form>
-    </Fade>
-  </div>;
-
-  const body = <div style={modalStyle} className={classes.paper}></div>;
+  const body = (
+    <div style={modalStyle} className={classes.paper}>
+      <Fade in={open}>
+        <form onSubmit={handleSubmit(onSubmitFunc)}>
+          <Input
+            name="title"
+            placeholder="Title"
+            required
+            register={register}
+            error={errors.title?.message}
+          />
+          <Input
+            name="category"
+            placeholder="Category"
+            required
+            register={register}
+            error={errors.title?.message}
+          />
+          <label>Difficulty</label>
+          <MySelect name="difficulty" {...register("difficulty")}>
+            <option value=""></option>
+            <option value="very easy">very easy</option>
+            <option value="easy">easy</option>
+            <option value="moderated">moderated</option>
+            <option value="hard">hard</option>
+            <option value="very hard">very hard</option>
+          </MySelect>
+          <label>Frequency</label>
+          <MySelect name="frequency" {...register("frequency")}>
+            <option value=""></option>
+            <option value="three in three hours">three in three hours</option>
+            <option value="daily">daily</option>
+            <option value="weekly">weekly</option>
+          </MySelect>
+          <MenuItem style={{ display: "flex", justifyContent: "center" }}>
+            <Button type="submit">Ok</Button>
+            <Button onClick={handleClose}>Cancel</Button>
+          </MenuItem>
+        </form>
+      </Fade>
+    </div>
+  );
 
   return (
     <div>
