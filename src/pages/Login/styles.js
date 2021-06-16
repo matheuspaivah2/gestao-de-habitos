@@ -30,6 +30,7 @@ export const AnimationContainer = styled.div`
     justify-content:center;
     animation: ${appearFromRight} 1s;
     form{
+        width:150%;
         text-align:center;
     }
     h1{
@@ -45,7 +46,7 @@ export const AnimationContainer = styled.div`
     @media(min-width: 800px) {
         form{
             margin:80px;
-            width:540px;
+            width:560px;
             text-align:center;
         }
     }
