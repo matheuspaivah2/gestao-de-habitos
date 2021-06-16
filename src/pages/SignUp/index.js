@@ -1,4 +1,4 @@
-import{useHistory,Link} from "react-router-dom"
+import{useHistory,Link, Redirect} from "react-router-dom"
 import Button from "../../components/Button"
 import Input from "../../components/Input"
 import {Container,AnimationContainer} from "./styles"
@@ -30,6 +30,10 @@ const SignUp = () => {
             return history.push('/login')
         })
         .catch((err) => toast.error('Erro ao criar usuário'))
+    }
+    const token = localStorage.getItem("@GestãoDeHábitos:access") || false;
+    if(token){
+      return <Redirect to="/dashboard"/>
     }
 
 

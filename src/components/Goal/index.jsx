@@ -4,8 +4,39 @@ import Fade from "@material-ui/core/Fade";
 import { makeStyles, Modal, Checkbox } from "@material-ui/core";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
+import api from '../../services/api'
 
 const Goal = ({ goal, setModalGoal, modalGoal, setGoal }) => {
+  const [disabledCheck, setDisabledCheck] = useState(false)
+  const [checked, setChecked] = useState(localStorage.getItem('dailyCheck'))
+  const [counter, setCounter] = useState(0)
+
+  useEffect(() => {
+    setChecked(localStorage.getItem('dailyCheck'))
+  }, [])
+
+  const handleCheck = (e) => {
+    setCounter(counter + 14)
+    if(counter > 83) {
+      setCounter(100)
+    }
+    if (e.target.checked === true) {
+      api.patch(`/goals/${goal.id}/`, {
+        how_much_achieved: counter
+      })
+      setDisabledCheck(true)
+      setChecked(true)
+      toast.success("Daily goal checked")
+      localStorage.setItem('dailyCheck', true);
+      setTimeout(() => {
+        localStorage.setItem('dailyCheck', false)
+        setDisabledCheck(false)
+        setChecked(false)
+      }, 2000);
+    }
+  }
+
   const handleClose = () => {
     setModalGoal(false);
     setGoal([]);
@@ -76,11 +107,11 @@ const Goal = ({ goal, setModalGoal, modalGoal, setGoal }) => {
               <p>Difficulty: {goal.difficulty}</p>
               <div className="achieved">
                 <Progress
-                  value={goal.how_much_achieved}
-                  text={`${goal.how_much_achieved}%`}
+                  value={counter}
+                  text={`${counter}%`}
                 />
                 <div className="check">
-                  <Checkbox />
+                  <Checkbox checked={checked} disabled={disabledCheck} onChange={e => handleCheck(e)}/>
                   <span>Daily check</span>
                 </div>
               </div>
