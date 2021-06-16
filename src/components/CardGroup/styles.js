@@ -100,6 +100,7 @@ export const Container = styled.div`
       font-size: 1rem;
       font-weight: bolder;
       cursor: pointer;
+      font-family: "Londrina Solid", cursive;
     }
   }
 `;

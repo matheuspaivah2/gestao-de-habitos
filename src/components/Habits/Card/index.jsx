@@ -10,16 +10,23 @@ const Card = ({ habit }) => {
         <strong>{habit.title.toUpperCase()}</strong>
       </div>
       <ul className="list">
-        <li>Category: {habit.category}</li>
-        <li>Difficulty: {habit.difficulty}</li>
-        <li>Frequency: {habit.frequency}</li>
+        <li>
+          Category: <span>{habit.category}</span>
+        </li>
+        <li>
+          Difficulty: <span>{habit.difficulty}</span>
+        </li>
+        <li>
+          Frequency: <span>{habit.frequency}</span>
+        </li>
         <div className="container__Progress">
           <Progress
             value={habit.how_much_achieved}
             text={`${habit.how_much_achieved}%`}
             styles={buildStyles({
-              pathColor: "black",
-              textColor: "black",
+              pathColor: "#0a315d",
+              textColor: "#0a315d",
+              trailColor: "rgb(234 169 143)",
             })}
           />
         </div>
