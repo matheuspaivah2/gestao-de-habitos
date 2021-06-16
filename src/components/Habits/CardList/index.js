@@ -10,25 +10,25 @@ const CardList = () => {
   const { token } = useContext(HabitsContext);
   const [habits, setHabits] = useState([]);
 
-  const getHabits = () => {
-    api
-      .get("/habits/personal/")
-      .then((res) => setHabits(res.data))
-      .catch((err) => console.log(err));
-  };
+  async function getHabits () {
+    console.log("passou pelo cardList", token)
+    api.defaults.headers.authorization = `Bearer ${token}`;
+    const response = await api.get("/habits/personal/")
+    const habits = await response.data
+    setHabits(habits)
+  }
 
+  // getHabits();
   useEffect(() => {
+    
     if (habits.length === 0) {
-      api.defaults.headers.authorization = `Bearer ${token}`;
       getHabits();
     }
-  }, [token, habits]);
+  });
 
-  
-  console.log(habits);
   return (
     <Container showThumbs={false} autoPlay={false} infiniteLoop>
-      {habits[0] &&
+      {
         habits.map((habit) => <Card habit={habit} key={habit.id} />)}
     </Container>
   );
