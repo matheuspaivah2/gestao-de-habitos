@@ -7,7 +7,7 @@ export const Container = styled.div `
     flex-direction: column;
     align-items: center;
     h3 {
-        background-color: var(--boldgreen);
+        background-color: #0a315d;
         color: var(--white); 
         width: 50vw;
         border-radius: 0 0 100px 100px;
@@ -33,7 +33,7 @@ export const Container = styled.div `
         select {
             width: 25vw;
             height: 10vw;
-            background-color: var(--boldgreen);
+            background-color: #0a315d;
             color: var(--white); 
             border-radius: 0 5px 5px 0;
             border: 0;
@@ -68,8 +68,9 @@ export const Groups = styled(Carousel)`
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
+    
     > div {
-        height: 60vh;
+        height: 65vh;
     }
     .carousel-status {
         visibility: hidden;
