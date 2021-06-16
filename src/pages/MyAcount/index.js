@@ -19,8 +19,9 @@ const MyAcount = () => {
     
 
     const getToken = () => {
+        const localToken = JSON.parse(localStorage.getItem('@GestãoDeHábitos:access'))
+        api.defaults.headers.authorization = `Bearer ${localToken}`;
         setToken(JSON.parse(localStorage.getItem('@GestãoDeHábitos:access')))
-        api.defaults.headers.authorization = `Bearer ${token}`;
         if (token) {
             setDecode(jwt_decode(JSON.parse(localStorage.getItem('@GestãoDeHábitos:access'))))
         }
