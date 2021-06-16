@@ -9,11 +9,12 @@ const HabitsProvider = ({children}) => {
   const [token, setToken] = useState(null)
 
   const getToken = () => {
-    setToken(JSON.parse(localStorage.getItem('@GestãoDeHábitos:access')))
-    api.defaults.headers.authorization = `Bearer ${token}`;
+    const localToken = JSON.parse(localStorage.getItem('@GestãoDeHábitos:access'))
     // user id
-    if (token !== null) {
-      const decoded = jwt_decode(JSON.parse(localStorage.getItem('@GestãoDeHábitos:access')))
+    if (localToken !== null) {
+      setToken(localToken)
+      api.defaults.headers.authorization = `Bearer ${localToken}`;
+      const decoded = jwt_decode(localToken)
       setUser_id(decoded.user_id)
     }
   }
@@ -22,8 +23,9 @@ const HabitsProvider = ({children}) => {
     getToken();
   })
 
+  console.log("passou pelo provider",token)
   return (
-    <HabitsContext.Provider value={{token, user_id}}>
+    <HabitsContext.Provider value={{token: token, user_id, setToken}}>
       {children}
     </HabitsContext.Provider>
   )

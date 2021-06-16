@@ -8,8 +8,12 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import api from "../../services/api"
 import{ toast } from 'react-toastify'
+import { HabitsContext } from "../../providers/habits";
+import { useContext } from 'react';
 
 const Login = () => {
+    const { setToken } = useContext(HabitsContext)
+
     const forSchema = yup.object().shape({
         username: yup.string().required("Username Obrigatótio"),
         password: yup.string().required("Campo Obrigatório"),
@@ -25,11 +29,12 @@ const Login = () => {
         .then((response)=> {
             const {access} = response.data
             localStorage.setItem("@GestãoDeHábitos:access", JSON.stringify(access))
+            setToken(access)
             return history.push('/dashboard')
         })
         .catch((err) => toast.error('Erro ao logar, Login e/ou senha inválidos'))
     }
-    const token = localStorage.getItem("@GestãoDeHábitos:access") || false;
+    const token = JSON.parse(localStorage.getItem("@GestãoDeHábitos:access")) || "";
     if(token){
       return <Redirect to="/dashboard"/>
     }
