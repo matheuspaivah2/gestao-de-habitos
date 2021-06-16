@@ -143,7 +143,6 @@ const Habits = () => {
       <BackgroundHeading>
         <strong>Habits</strong>
       </BackgroundHeading>
-      <Menu />
       <Container>
         <AnimationContainer>
           {/* <Box> */}

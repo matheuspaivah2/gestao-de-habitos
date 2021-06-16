@@ -11,11 +11,13 @@ import jwt_decode from "jwt-decode"
 import {useEffect,useState} from 'react'
 import { Redirect} from "react-router";
 import Menu from "../../components/Menu";
-
+import { useHistory } from "react-router-dom";
 const MyAcount = () => {
     const [usuario, setUsuario] = useState('')
     const [token, setToken] = useState(null)
     const [decode, setDecode] = useState('')
+    const history = useHistory();
+
     const forSchema = yup.object().shape({
         username: yup.string().required("Username Obrigatótio"),
         email: yup.string().required("email Obrigatótio")
@@ -63,7 +65,7 @@ const MyAcount = () => {
 
     return(
         <Container>
-            <Menu/>
+
             <h1>Alterar Usuário</h1>
             <AnimationContainer>
               <form onSubmit={handleSubmit(handleSubmitFunction)}>
@@ -74,6 +76,7 @@ const MyAcount = () => {
                     <Input register={register} name="email" icon={FiVoicemail} placeholder="Seu Novo Email" error={errors.email?.message}/>
                     <Button type="submit" size={"90%"}>Alterar</Button>
               </form>
+              <Button handle={()=>(localStorage.removeItem('@GestãoDeHábitos:access'), history.push("/login"))} >Logout</Button>
             </AnimationContainer>
         </Container>
     )
