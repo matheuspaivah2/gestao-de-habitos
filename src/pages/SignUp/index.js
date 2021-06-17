@@ -40,11 +40,11 @@ const SignUp = () => {
             <AnimationContainer>
               <form onSubmit={handleSubmit(handleSubmitFunction)}>
                     <h1>SignUp</h1>
-                    <Input register={register} name="username" icon={FiUser} placeholder="Seu Username" error={errors.username?.message}/>
-                    <Input register={register} name="email" icon={FiVoicemail} placeholder="Seu Email" error={errors.email?.message}/>
-                    <Input register={register} name="password" icon={FiLock} placeholder="Sua Senha" type="password" error={errors.password?.message}/>
-                    <Button type="submit" size={"99%"}>Entrar</Button>
-                    <p>Já tem conta? Entre em sua <Link to="/login">Conta</Link></p>
+                    <Input register={register} name="username" icon={FiUser} placeholder="Your Username" error={errors.username?.message}/>
+                    <Input register={register} name="email" icon={FiVoicemail} placeholder="Your Email" error={errors.email?.message}/>
+                    <Input register={register} name="password" icon={FiLock} placeholder="Your Password" type="password" error={errors.password?.message}/>
+                    <Button type="submit" size={"100%"}>SignUp</Button>
+                    <p>Already have an account? Login to your <Link to="/login">Account</Link></p>
               </form>
             </AnimationContainer>
         </Container>

@@ -1,26 +1,22 @@
 import styled, { keyframes } from "styled-components"
 
 export const Container = styled.div`
-    height:100vh;
+    height:90vh;
     display:flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    h1{
-        text-align:left;
-        margin-left: 6px;
-    }
 `
 const appearFromRight = keyframes`
     from{
         opacity:0;
         width:100%;
-        transform: translateX(-150px)
+        transform: translateY(-50px)
     }
     to{
         opacity: 1;
-        transform: translateX(0px)
+        transform: translateY(0px)
     }
 
 `
@@ -31,14 +27,17 @@ export const AnimationContainer = styled.div`
     justify-content:center;
     animation: ${appearFromRight} 1s;
     form{
-        width:100%;
+        width:160%;
         text-align:center;
+        max-width: 320px;
     }
     h3{
         text-align: left;
     }
     p{
+        margin-left:4px;
         margin-top:8px;
+        text-align: left;
         a{
             font-weight: bold;
             color: var(--orange);
@@ -52,6 +51,21 @@ export const AnimationContainer = styled.div`
         }
     }
 `
-
+export const Button = styled.button`
+  border: 2px #0a315d;
+  width: ${({ size }) => (size)};
+  padding: 1.6vh;
+  color: white;
+  margin-top: 1vh;
+  background-color: #0a315d;
+  font-size: 1.1rem;
+  border-radius: 2px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Londrina Solid", cursive;
+  @media(max-width: 400px) {
+        margin-top: ${({ margin }) => (margin)};
+    }
+`;
 
 

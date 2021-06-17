@@ -15,7 +15,7 @@ export const Container = styled.div`
 const appearFromRight = keyframes`
     from{
         opacity:0;
-        transform: translateX(-150px)
+        transform: translateX(150px)
     }
     to{
         opacity: 1;
@@ -30,7 +30,7 @@ export const AnimationContainer = styled.div`
     justify-content:center;
     animation: ${appearFromRight} 1s;
     form{
-        width:150%;
+        width:105%;
         text-align:center;
     }
     h1{
