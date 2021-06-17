@@ -6,6 +6,8 @@ const Container = styled.div`
   justify-content: center;
   text-align: center;
   flex-direction: column;
+  max-width: 1000px;
+  margin: 0 auto;
 `;
 
 const appearFromRight = keyframes`
@@ -82,16 +84,19 @@ export const MySelect = styled.select`
 export default Container;
 
 export const Button = styled.button`
-  border: none;
+  border: 2px solid black;
   width: 90%;
-  padding: 1.5vh;
+  padding: 1.6vh;
   color: white;
   background-color: #0a315d;
-  font-size: 1rem;
-  border-radius: 4px;
+  font-size: 1.1rem;
+  border-radius: 3px;
   margin: 0 auto;
   margin-top: 3vh;
   text-align: left;
-  font-size: 1.1rem;
   font-family: "Londrina Solid", cursive;
+
+  @media (min-width: 768px) {
+    font-size: 1.4rem;
+  }
 `;

@@ -1,4 +1,4 @@
-import { Container, Input, HiddenInput } from "./styles";
+import { Container, Input } from "./styles";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { makeStyles, Modal } from "@material-ui/core";
@@ -56,7 +56,8 @@ const NewGoal = ({ groupId, openNewGoal, setOpenNewGoal }) => {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      width: "",
+      maxWidth: "500px",
+      margin: "0 auto",
     },
     paper: {
       backgroundColor: theme.palette.background.paper,
