@@ -12,7 +12,7 @@ const NewGoal = ({ groupId, openNewGoal, setOpenNewGoal }) => {
   const handleClose = () => {
     setOpenNewGoal(false);
   };
-  console.log(groupId);
+
   const schema = yup.object().shape({
     title: yup
       .string()

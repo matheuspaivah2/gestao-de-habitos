@@ -68,23 +68,6 @@ export const InputMenu = styled.div`
   }
 `;
 
-export const BackgroundHeading = styled.div`
-  margin: 0 auto;
-  height: 7vh;
-  width: 70%;
-  background-color: #0a315d;
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  strong {
-    font-size: 1.5rem;
-    color: white;
-    font-weight: 400;
-  }
-`;
-
 export const MySelect = styled.select`
   background: var(--white);
   border-radius: 1px;
