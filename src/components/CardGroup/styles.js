@@ -24,10 +24,14 @@ export const Container = styled.div`
     strong {
       font-size: 1.3rem;
       color: white;
-      font-weight: 300;
+      font-weight: bolder;
       width: 80%;
       overflow: hidden;
       height: 25px;
+      @media (min-width: 768px) {
+        font-size: 1.8rem;
+        height: 40px;
+      }
     }
   }
 
@@ -38,6 +42,9 @@ export const Container = styled.div`
     margin-top: 1vh;
     width: 90%;
     margin: 1vh auto;
+    @media (min-width: 768px) {
+      font-size: 1.3rem;
+    }
   }
 
   .container__InfoGroup {
@@ -52,6 +59,9 @@ export const Container = styled.div`
     font-weight: bolder;
     margin-top: 1vh;
     font-size: 1.2rem;
+    @media (min-width: 768px) {
+      font-size: 1.8rem;
+    }
   }
 
   .box {
@@ -65,6 +75,9 @@ export const Container = styled.div`
 
     h3 {
       font-size: 1.1rem;
+      @media (min-width: 768px) {
+        font-size: 1.6rem;
+      }
     }
 
     .list {
@@ -83,6 +96,10 @@ export const Container = styled.div`
         cursor: pointer;
         text-decoration: underline;
         font-style: italic;
+
+        @media (min-width: 768px) {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -103,6 +120,9 @@ export const Container = styled.div`
       font-weight: bolder;
       cursor: pointer;
       font-family: "Londrina Solid", cursive;
+      @media (min-width: 768px) {
+        font-size: 1.6rem;
+      }
     }
   }
 `;

@@ -9,19 +9,21 @@ import Container, {
 import { useState } from "react";
 import CardList from "../../components/Habits/CardList";
 import NewHabit from "../../components/Habits/NewHabit";
-import {useContext} from 'react'
-import {HabitsContext} from '../../providers/habits'
-import { Redirect } from 'react-router-dom'
+import { useContext } from "react";
+import { HabitsContext } from "../../providers/habits";
+import { Redirect } from "react-router-dom";
 
 const Habits = () => {
   const [open, setOpen] = useState(false);
-  const {token} = useContext(HabitsContext)
+  const { token } = useContext(HabitsContext);
 
   const useStyles = makeStyles((theme) => ({
     modal: {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+      maxWidth: "500px",
+      margin: "0 auto",
     },
   }));
   const classes = useStyles();
@@ -34,8 +36,8 @@ const Habits = () => {
     setOpen(false);
   };
 
-  if(!token){
-    return <Redirect to="/login"/>
+  if (!token) {
+    return <Redirect to="/login" />;
   }
 
   return (
