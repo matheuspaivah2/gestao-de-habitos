@@ -1,12 +1,12 @@
 import axios from "axios";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
 export const MyGroupsContext = createContext([]);
 
 export const MyGroupsProvider = ({ children }) => {
   const [myGroups, setMyGroups] = useState([]);
 
-  const loadGroups = () => {
+  const loadGroups = useCallback(() => {
     const token = localStorage.getItem("@GestãoDeHábitos:access") || "";
     console.log(JSON.parse(token));
     axios
@@ -22,11 +22,11 @@ export const MyGroupsProvider = ({ children }) => {
       .catch((err) => {
         console.log(err);
       });
-  };
+  }, []);
 
   useEffect(() => {
     loadGroups();
-  }, []);
+  });
 
   return (
     <MyGroupsContext.Provider value={{ myGroups, loadGroups }}>
