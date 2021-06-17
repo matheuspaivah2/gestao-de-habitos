@@ -8,12 +8,13 @@ import Habits from "../pages/Habits";
 import MyAcount from "../pages/MyAcount";
 import Discovery from "../pages/Discovery";
 import PageNotFound from "../pages/NotFound";
+import Dashboard from "../pages/Dashboard";
 
 const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route path="/dashboard" component={Habits} />
+      <Route path="/dashboard" component={Dashboard} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={SignUp} />
       <Route path="/groups" component={Groups} />

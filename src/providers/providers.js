@@ -4,14 +4,13 @@ import { MyGroupsProvider } from './MyGroups';
 
 const Providers = ({children}) => {
   return (
-    <MyGroupsProvider>
-      <GroupsProvider>
-        <HabitsProvider>
-          {children}
-        </HabitsProvider>
-      </GroupsProvider>
-    </MyGroupsProvider>
-
+      <MyGroupsProvider>
+        <GroupsProvider>
+          <HabitsProvider>
+            {children}
+          </HabitsProvider>
+        </GroupsProvider>
+      </MyGroupsProvider>
   )
 }
 
