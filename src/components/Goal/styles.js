@@ -23,15 +23,24 @@ export const Container = styled.div`
     border-bottom: 2px solid black;
     padding: 6vw;
     padding-right: 4vw;
+    @media (min-width: 768px) {
+      padding: 3vw;
+    }
     strong {
-      font-size: 1.4rem;
+      font-size: 1.1rem;
       color: white;
       font-weight: bolder;
+      @media (min-width: 768px) {
+        font-size: 1.9rem;
+      }
     }
     div {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: white;
       cursor: pointer;
+      @media (min-width: 768px) {
+        font-size: 1.9rem;
+      }
     }
   }
 
@@ -47,8 +56,17 @@ export const Container = styled.div`
 
     h2 {
       text-transform: uppercase;
-      font-size: 1rem;
+      font-size: 1.3rem;
       text-align: center;
+      @media (min-width: 768px) {
+        font-size: 1.9rem;
+      }
+    }
+    p {
+      font-size: 1rem;
+      @media (min-width: 768px) {
+        font-size: 1.6rem;
+      }
     }
     .achieved {
       display: flex;
@@ -68,24 +86,33 @@ export const Container = styled.div`
         border-radius: 4px;
         border: 2px solid black;
         background-color: #0a315d;
-
+        @media (min-width: 768px) {
+          max-width: 245px;
+        }
         span {
           font-size: 1.1rem;
           color: white;
+          @media (min-width: 768px) {
+            font-size: 1.7rem;
+          }
         }
       }
     }
   }
   button {
-    width: 60%;
-    border: 2px solid black;
+    width: 50%;
+    border: none;
     background-color: #0a315d;
     border-radius: 4px;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bolder;
-    padding: 6px;
+    padding: 8px;
     font-family: "Londrina Solid", cursive;
+    @media (min-width: 768px) {
+      width: 50%;
+      font-size: 1.6rem;
+    }
   }
 `;
 
