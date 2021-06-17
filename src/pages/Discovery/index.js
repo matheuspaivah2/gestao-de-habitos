@@ -3,6 +3,7 @@ import { Container, Groups } from "./styles";
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { useGroups } from "../../providers/Groups";
+import { Redirect } from "react-router-dom";
 
 const Discovery = () => {
     const {groups} = useGroups();
@@ -11,6 +12,9 @@ const Discovery = () => {
     const [input, setInput] = useState("");
     const [type, setType] = useState("category");
     const [results, setResults] = useState(false);
+    const [token] = useState(localStorage.getItem("@GestãoDeHábitos:access") || false);
+
+    
 
     useEffect(() => {
         setRecomGroups(groups.flat().sort(function(a, b) {
@@ -30,6 +34,10 @@ const Discovery = () => {
         setResults(!results);
         setInput("");
     };
+
+    if(!token){
+        return <Redirect to="/login"/>
+    }
 
     return(
         <Container>
