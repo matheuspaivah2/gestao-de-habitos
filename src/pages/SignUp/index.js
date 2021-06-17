@@ -1,7 +1,6 @@
 import{Link,Redirect,useHistory} from "react-router-dom"
-import Button from "../../components/Button"
 import Input from "../../components/Input"
-import {Container,AnimationContainer} from "./styles"
+import {Container,AnimationContainer, Button} from "./styles"
 import { FiVoicemail,FiUser, FiLock} from "react-icons/fi"
 import * as yup from 'yup';
 import { useForm } from "react-hook-form";
@@ -13,7 +12,10 @@ const SignUp = () => {
     const forSchema = yup.object().shape({
         username: yup.string().required("Username Obrigatótio"),
         email: yup.string().required("Email Obrigatótio").email("Email Inválido"),
-        password: yup.string().required("Campo Obrigatório"),
+        password: yup.string().matches(
+            /^((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
+            "Senha deve conter ao menos uma letra maiúscula, uma minúscula, um número e um caracter especial!"
+          ).required("Senha obrigatória"),
       })
     const{register, handleSubmit, formState:{errors}} = useForm({
         resolver: yupResolver(forSchema)
