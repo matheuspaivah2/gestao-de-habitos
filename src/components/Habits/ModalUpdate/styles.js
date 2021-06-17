@@ -4,13 +4,16 @@ export const Button = styled.button`
   width: 50%;
   border: none;
   background-color: #0a315d;
-  color: white;
   border-radius: 4px;
-  padding: 8px;
+  color: white;
   font-size: 1.1rem;
   font-weight: bolder;
-  cursor: pointer;
+  padding: 8px;
   font-family: "Londrina Solid", cursive;
+  @media (min-width: 768px) {
+    width: 50%;
+    font-size: 1.6rem;
+  }
 `;
 
 export const Container = styled.div``;

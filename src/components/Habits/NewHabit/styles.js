@@ -3,19 +3,19 @@ import { TextField } from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
 
 export const Button = styled.button`
-  border: none;
-  width: 70%;
-  padding: 1.5vh;
-  color: white;
+  width: 60%;
+  border: 2px solid black;
   background-color: #0a315d;
-  font-size: 1rem;
-  border-radius: 2px;
-  margin: 0 auto;
-  margin-top: 3vh;
-  text-align: left;
+  border-radius: 4px;
+  color: white;
+  font-size: 1.1rem;
   font-weight: bolder;
-  text-align: center;
-  border: 1px solid black;
+  padding: 8px;
+  font-family: "Londrina Solid", cursive;
+  @media (min-width: 768px) {
+    width: 60%;
+    font-size: 1.6rem;
+  }
 
   &:hover {
     border: 2px solid #0a315d;
@@ -34,7 +34,9 @@ export const MySelect = styled.select`
   display: flex;
   transition: 0.5s;
   font-size: 1rem;
-
+  @media (min-width: 768px) {
+    height: 7vh;
+  }
   option {
     background-color: white;
   }
@@ -54,22 +56,23 @@ export const Container = styled.div`
     align-items: center;
     padding-left: 3vh;
     padding-right: 2vh;
-    border-bottom: 3px solid black;
-    position: relative;
+    border-bottom: 2px solid black;
+    
     strong {
       font-size: 1.1rem;
       color: white;
+      font-weight: bolder;
+      @media (min-width: 768px) {
+        font-size: 1.7rem;
+      }
     }
     div {
-      /* position: absolute; */
-      right: 10px;
-      top: 8px;
-      width: 5%;
-      height: 4vh;
+      font-size: 1.3rem;
       color: white;
-      font-size: 1.2rem;
       cursor: pointer;
-      text-align: center;
+      @media (min-width: 768px) {
+        font-size: 1.9rem;
+      }
     }
   }
 
@@ -85,6 +88,16 @@ export const Container = styled.div`
 export const Input = withStyles({
   root: {
     width: "90%",
-    margin: "0",
+    "& .MuiOutlinedInput-root": {
+      height: "7vh",
+    },
+  },
+  "@media (min-width: 768px)": {
+    root: {
+      // width: "90%",
+      "& .MuiOutlinedInput-root": {
+        height: "7vh",
+      },
+    },
   },
 })(TextField);

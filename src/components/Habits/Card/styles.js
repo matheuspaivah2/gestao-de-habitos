@@ -14,23 +14,16 @@ export const Container = styled.div`
   height: 65vh;
   background-color: #ffffff;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='79' height='79' viewBox='0 0 200 200'%3E%3Cpolygon fill='%23DCEFFA' points='100 0 0 100 100 100 100 200 200 100 200 0'/%3E%3C/svg%3E");
-  /* background: rgba( 7, 7, 7, 0.25 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 4px );
-  -webkit-backdrop-filter: blur( 4px );
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 ); */
 
   .container--NameGroup {
     margin: 0 auto;
     height: 7vh;
-    width: 70%;
+    width: 100%;
     background-color: #0a315d;
-    border-bottom-left-radius: 100px;
-    border-bottom-right-radius: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 2px solid black;
     strong {
       font-size: 1.2rem;
       color: white;
@@ -38,6 +31,11 @@ export const Container = styled.div`
       width: 80%;
       overflow: hidden;
       height: 25px;
+
+      @media (min-width: 768px) {
+        font-size: 2.1rem;
+        height: 40px;
+      }
     }
   }
 
@@ -50,10 +48,15 @@ export const Container = styled.div`
 
     li {
       font-size: 1.2rem;
-      color: #09315D;
-
+      color: #09315d;
+      @media (min-width: 768px) {
+        font-size: 1.9rem;
+      }
       span {
-        color: #000;
+        color: #758fe2;
+        @media (min-width: 768px) {
+          font-size: 1.9rem;
+        }
       }
     }
   }
