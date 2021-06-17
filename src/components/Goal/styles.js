@@ -24,10 +24,11 @@ export const Container = styled.div`
     padding: 6vw;
     padding-right: 4vw;
     @media (min-width: 768px) {
-      padding: 3vw;
+      padding: 3vh;
+      max-height: 80px;
     }
     strong {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       color: white;
       font-weight: bolder;
       @media (min-width: 768px) {
@@ -74,6 +75,10 @@ export const Container = styled.div`
       justify-content: center;
       align-items: center;
       margin-top: 4vh;
+      @media (min-width: 768px) {
+        max-width: 90%;
+        column-gap: 1vw;
+      }
       .check {
         display: flex;
         width: 65%;
@@ -87,7 +92,7 @@ export const Container = styled.div`
         border: 2px solid black;
         background-color: #0a315d;
         @media (min-width: 768px) {
-          max-width: 245px;
+          max-width: 400px;
         }
         span {
           font-size: 1.1rem;
@@ -112,6 +117,7 @@ export const Container = styled.div`
     @media (min-width: 768px) {
       width: 50%;
       font-size: 1.6rem;
+      cursor: pointer;
     }
   }
 `;
@@ -121,4 +127,7 @@ export const Progress = styled(CircularProgressbar)`
   height: 15vh;
   width: 25vw;
   align-self: center;
+  @media (min-width: 768px) {
+    width: 10vw;
+  }
 `;

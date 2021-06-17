@@ -1,4 +1,4 @@
-import { Container, Input } from "./styles";
+import { Container, Input, MySelect } from "./styles";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { makeStyles, Modal } from "@material-ui/core";
@@ -108,7 +108,7 @@ const NewGoal = ({ groupId, openNewGoal, setOpenNewGoal }) => {
                 error={!!errors.title}
                 helperText={errors.title?.message}
               />
-              <Input
+              {/* <Input
                 required
                 margin="normal"
                 variant="outlined"
@@ -118,7 +118,21 @@ const NewGoal = ({ groupId, openNewGoal, setOpenNewGoal }) => {
                 {...register("difficulty")}
                 error={!!errors.difficulty}
                 helperText={errors.difficulty?.message}
-              />
+              /> */}
+              <MySelect
+                name="frequency"
+                {...register("difficulty")}
+                error={!!errors.difficulty}
+                helperText={errors.difficulty?.message}
+                required
+              >
+                <option value="" disabled selected>
+                  Difficulty *
+                </option>
+                <option value="Easy">Easy</option>
+                <option value="Meddium">Meddium</option>
+                <option value="Hard">Hard</option>
+              </MySelect>
 
               <button type="submit">Register</button>
             </form>

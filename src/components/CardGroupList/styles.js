@@ -8,4 +8,7 @@ export const Container = styled(Carousel)`
   .carousel {
     height: 80vh;
   }
+  .carousel.carousel-slider .control-arrow {
+    background-color: #0a315dc4;
+  }
 `;
