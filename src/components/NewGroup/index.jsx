@@ -51,6 +51,7 @@ const NewGroup = ({ openNewGroup, setOpenNewGroup }) => {
       .catch((e) => {
         toast.error("Error!");
       });
+    handleClose();
   };
 
   const useStyles = makeStyles((theme) => ({
@@ -90,7 +91,8 @@ const NewGroup = ({ openNewGroup, setOpenNewGroup }) => {
         <div className={classes.paper}>
           <Container>
             <div className="container__nameGoal">
-              <strong>{"New Group"}</strong>
+              <strong>New Group</strong>
+              <div onClick={() => handleClose()}>X</div>
             </div>
 
             <form
@@ -130,10 +132,12 @@ const NewGroup = ({ openNewGroup, setOpenNewGroup }) => {
                 error={!!errors.category}
                 helperText={errors.category?.message}
               />
-              <div className="container__buttons">
-                <button onClick={() => handleClose()}>Back</button>
-                <button type="submit">Register</button>
-              </div>
+              {/* <div className="container__buttons"> */}
+              {/* <button onClick={() => handleClose()}>Back</button> */}
+              <button type="submit" className="bt__submit">
+                Register
+              </button>
+              {/* </div> */}
             </form>
           </Container>
         </div>

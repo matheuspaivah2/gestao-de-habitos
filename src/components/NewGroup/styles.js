@@ -14,26 +14,30 @@ export const Container = styled.div`
     margin: 0;
     height: 9vh;
     width: 100%;
-    background-color: #056479;
-    /* border-bottom-left-radius: 100px;
-    border-bottom-right-radius: 100px; */
+    background-color: #0a315d;
+
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid black;
+    padding: 3vw;
     strong {
-      font-size: 1.5rem;
+      font-size: 1.1rem;
       color: white;
       font-weight: bolder;
+    }
+    div {
+      font-size: 1.3rem;
+      color: white;
+      cursor: pointer;
     }
   }
 
   .container__inputs {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    margin-top: 2vh;
     row-gap: 2vh;
     padding: 4px;
     height: 81%;
@@ -44,29 +48,21 @@ export const Container = styled.div`
       text-align: center;
     }
   }
-
-  .container__buttons {
-    width: 100%;
-    display: flex;
-    column-gap: 3vw;
-    justify-content: center;
-    align-items: center;
-    margin-top: auto;
-    margin-bottom: 1vh;
-
-    button {
-      width: 40%;
-      border: none;
-      background-color: #056479;
-      border-radius: 4px;
-      color: white;
-      font-size: 1rem;
-      font-weight: bolder;
-      padding: 8px;
-    }
+  .bt__submit {
+    width: 40%;
+    border: none;
+    background-color: #0a315d;
+    border-radius: 3px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bolder;
+    padding: 8px;
+    font-family: "Londrina Solid", cursive;
   }
 `;
 
 export const Input = withStyles({
-  root: {},
+  root: {
+    width: "80%",
+  },
 })(TextField);

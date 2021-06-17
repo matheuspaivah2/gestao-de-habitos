@@ -43,7 +43,10 @@ const CardGroup = ({ group }) => {
           <ul className="list__goals list">
             {group.goals &&
               group.goals.map((goal) => (
-                <li key={goal.id} onClick={() => handleGoal(goal)}>
+                <li
+                  key={`${goal.title}${goal.id}`}
+                  onClick={() => handleGoal(goal)}
+                >
                   {goal.title}
                 </li>
               ))}
@@ -55,7 +58,10 @@ const CardGroup = ({ group }) => {
           <ul className="list__activities list">
             {group.activities &&
               group.activities.map((activity) => (
-                <li key={group.id} onClick={() => handleActivity(activity)}>
+                <li
+                  key={`${activity.title}${activity.id}`}
+                  onClick={() => handleActivity(activity)}
+                >
                   {activity.title}
                 </li>
               ))}

@@ -48,6 +48,7 @@ const NewGoal = ({ groupId, openNewGoal, setOpenNewGoal }) => {
       .catch((e) => {
         toast.error("Error!");
       });
+    handleClose();
   };
 
   const useStyles = makeStyles((theme) => ({
@@ -87,7 +88,8 @@ const NewGoal = ({ groupId, openNewGoal, setOpenNewGoal }) => {
         <div className={classes.paper}>
           <Container>
             <div className="container__nameGoal">
-              <strong>{"New Goal"}</strong>
+              <strong>New Goal</strong>
+              <div onClick={() => handleClose()}>X</div>
             </div>
 
             <form
@@ -117,10 +119,7 @@ const NewGoal = ({ groupId, openNewGoal, setOpenNewGoal }) => {
                 helperText={errors.difficulty?.message}
               />
 
-              <div className="container__buttons">
-                <button onClick={() => handleClose()}>Back</button>
-                <button type="submit">Register</button>
-              </div>
+              <button type="submit">Register</button>
             </form>
           </Container>
         </div>

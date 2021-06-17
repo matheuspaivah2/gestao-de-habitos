@@ -2,13 +2,10 @@ import api from "../../../services/api";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-
 import { makeStyles } from "@material-ui/core/styles";
 import { Button, MySelect, Container, Input } from "./styles";
-
 import { toast } from "react-toastify";
 import { useContext } from "react";
-
 import { HabitsContext } from "../../../providers/habits";
 
 const NewHabit = ({ handleClose }) => {
@@ -26,7 +23,7 @@ const NewHabit = ({ handleClose }) => {
   } = useForm({
     resolver: yupResolver(formSchema),
   });
-  const { token, user_id } = useContext(HabitsContext);
+  const { token, user_id, getHabits } = useContext(HabitsContext);
   const onSubmitFunc = (data_user) => {
     const data = {
       category: data_user.category,
@@ -38,12 +35,13 @@ const NewHabit = ({ handleClose }) => {
     };
     api.defaults.headers.authorization = `Bearer ${token}`;
     api
-      .post("/habits/", data)
-      .then((res) => {
-        toast.success("Habit created");
-      })
-      .catch((err) => toast.error("Error in creating the habit"));
-
+    .post("/habits/", data)
+    .then((res) => {
+      toast.success("Habit created");
+    })
+    .catch((err) => toast.error("Error in creating the habit"));
+    
+    getHabits()
     handleClose();
   };
 

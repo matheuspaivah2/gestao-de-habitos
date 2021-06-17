@@ -7,25 +7,8 @@ import "react-circular-progressbar/dist/styles.css";
 import Card from "../Card";
 
 const CardList = () => {
-  const { token } = useContext(HabitsContext);
-  const [habits, setHabits] = useState([]);
+  const { habits } = useContext(HabitsContext);
 
-  const getHabits = () => {
-    api
-      .get("/habits/personal/")
-      .then((res) => setHabits(res.data))
-      .catch((err) => console.log(err));
-  };
-
-  useEffect(() => {
-    if (habits.length === 0) {
-      api.defaults.headers.authorization = `Bearer ${token}`;
-      getHabits();
-    }
-  }, [token, habits]);
-
-  
-  console.log(habits);
   return (
     <Container showThumbs={false} autoPlay={false} infiniteLoop>
       {habits[0] &&
