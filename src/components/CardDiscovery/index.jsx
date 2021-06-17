@@ -6,8 +6,6 @@ const CardDiscovery = ({ group }) => {
     const { name, description, category} = group;
     const [toggle, setToggle] = useState(false);
     
-    
-
     return(
         <Container onClick={() => setToggle(!toggle)}>
             

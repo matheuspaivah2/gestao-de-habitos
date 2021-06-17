@@ -56,6 +56,7 @@ const CardJoinGroup = ({group, toggle, setToggle}) => {
                     <Group>
                         <div className="container--NameGroup">
                             <strong>{group.name}</strong>
+                            <div onClick={() => setToggle(!toggle)}>X</div>
                         </div>
                         <p>{group.description}</p>
                         <span className="category">{group.category}</span>
@@ -87,7 +88,6 @@ const CardJoinGroup = ({group, toggle, setToggle}) => {
                         </div>
                         <div className="buttons__Add">
                             <button onClick={joinGroup}>Join Group</button>
-                            <button onClick={() => setToggle(!toggle)}>Close</button>
                         </div>
                     </Group>
                 </div>

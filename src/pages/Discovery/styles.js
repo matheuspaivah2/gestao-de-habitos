@@ -7,17 +7,18 @@ export const Container = styled.div `
     flex-direction: column;
     align-items: center;
     h3 {
+        margin-top: 3vh;
         background-color: #0a315d;
         color: var(--white); 
         width: 90vw;
-        border-radius: 0 0 5px 5px;
+        border-radius: 5px;
         text-align: center;
         padding: 5px 0;
         font-size: 3.5vh;
     }
     .input {
         width: 90vw;
-        margin: 5vh 0;
+        margin: 3vh 0;
         display: flex;
         justify-content: center;
 
@@ -59,7 +60,7 @@ export const Container = styled.div `
     span {
         width: 90vw;
         text-align: left;
-        margin-bottom: 5vh;
+        margin-bottom: 3vh;
         font-size: 3.4vh;
     }
 
