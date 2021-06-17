@@ -1,5 +1,5 @@
 import jwt_decode from 'jwt-decode';
-import { createContext, useCallback, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import api from '../../services/api';
 
 export const HabitsContext = createContext();
@@ -46,4 +46,5 @@ const HabitsProvider = ({children}) => {
   );
 };
 
+export const useHabits = () => useContext(HabitsContext);
 export default HabitsProvider;
