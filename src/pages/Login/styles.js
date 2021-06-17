@@ -30,7 +30,7 @@ export const AnimationContainer = styled.div`
     justify-content:center;
     animation: ${appearFromRight} 1s;
     form{
-        width:105%;
+        width: 99vw;
         text-align:center;
     }
     h1{

@@ -2,6 +2,7 @@ import styled, { keyframes } from "styled-components"
 
 export const Container = styled.div`
     height:90vh;
+    width: 100vw;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -30,7 +31,7 @@ export const AnimationContainer = styled.div`
     justify-content:center;
     animation: ${appearFromRight} 1s;
     form{
-        width:105%;
+        width: 99vw;
         text-align:center;
     }
     h1{
