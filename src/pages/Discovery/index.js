@@ -44,30 +44,36 @@ const Discovery = () => {
             </div>
             <span><strong>{results ? "Results" : "Recommeded Groups" }</strong></span>
             <Groups showThumbs={false}>
-                <div className="groups">
-                    {results 
-                        ? listGroups.slice(0,4).map((group, index) => (
-                            <CardDiscovery key={index} group={group}/> ))
-                        : recomGroups.slice(0,4).map((group, index) => (
-                            <CardDiscovery key={index} group={group}/> )
-                    )}
-                </div>
-                <div className="groups">
-                    {results 
-                        ? listGroups.slice(4,8).map((group, index) => (
-                            <CardDiscovery key={index} group={group}/> ))
-                        : recomGroups.slice(4,8).map((group, index) => (
-                            <CardDiscovery key={index} group={group}/> )
-                    )}
-                </div>
-                <div className="groups">
-                    {results 
-                        ? listGroups.slice(8,12).map((group, index) => (
-                            <CardDiscovery key={index} group={group}/> ))
-                        : recomGroups.slice(8,12).map((group, index) => (
-                            <CardDiscovery key={index} group={group}/> )
-                    )}
-                </div>
+                {results 
+                    ? <div className="groups">
+                        {listGroups.slice(0,4).map((group, index) => (
+                        <CardDiscovery key={index} group={group}/> ))}
+                    </div>
+                    : <div className="groups">
+                        {recomGroups.slice(0,4).map((group, index) => (
+                        <CardDiscovery key={index} group={group}/> ))}
+                    </div>
+                }
+                {results 
+                    ? <div className="groups">
+                        {listGroups.slice(4,8).map((group, index) => (
+                        <CardDiscovery key={index} group={group}/> ))}
+                    </div>
+                    : <div className="groups">
+                        {recomGroups.slice(4,8).map((group, index) => (
+                        <CardDiscovery key={index} group={group}/> ))}
+                    </div>
+                }
+                {results 
+                    ? listGroups.length > 8 ? <div className="groups">
+                        {listGroups.slice(8,12).map((group, index) => (
+                        <CardDiscovery key={index} group={group}/> ))}
+                        </div> : undefined
+                    : <div className="groups">
+                        {recomGroups.slice(8,12).map((group, index) => (
+                        <CardDiscovery key={index} group={group}/> ))}
+                    </div>
+                }
             </Groups>
         </Container>
     );

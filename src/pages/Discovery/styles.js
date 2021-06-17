@@ -9,69 +9,73 @@ export const Container = styled.div `
     h3 {
         background-color: #0a315d;
         color: var(--white); 
-        width: 50vw;
-        border-radius: 0 0 100px 100px;
+        width: 90vw;
+        border-radius: 0 0 5px 5px;
+        text-align: center;
         padding: 5px 0;
+        font-size: 3.5vh;
     }
     .input {
-        width: 93vw;
-        margin: 5vw 0;
+        width: 90vw;
+        margin: 5vh 0;
         display: flex;
         justify-content: center;
 
         input {
             width: 43vw;
-            height: 10vw;
+            height: 6vh;
             border-radius: 5px 0 0 5px;
             border: 0;
             background-color: var(--black);
             color: var(--white); 
-            font-size: 16px;
+            font-size: 2.7vh;
             text-align: center;
         }
 
         select {
-            width: 25vw;
-            height: 10vw;
+            width: 24vw;
+            height: 6vh;
             background-color: #0a315d;
             color: var(--white); 
             border-radius: 0 5px 5px 0;
             border: 0;
-            font-size: 14px;
+            font-size: 2.3vh;
+
+            
         }
 
         button {
             margin: 0 0 0 1vw;
             width: 25%;
-            height: 10vw;
+            height: 6vh;
             background-color: var(--black);
             color: var(--white); 
             border: 0;
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 2.7vh;
         }
     }
 
     span {
-        width: 92vw;
+        width: 90vw;
         text-align: left;
-        margin-bottom: 5vw;
-        font-size: 18px;
+        margin-bottom: 5vh;
+        font-size: 3.4vh;
     }
 
     
 `;
 export const Groups = styled(Carousel)`
-    width: 100vw;
+    width: 90vw;
+
     .groups {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        height: 60vh;
+        width: 90vw;
     }
-    
-    > div {
-        height: 65vh;
-    }
+
     .carousel-status {
         visibility: hidden;
         margin: 0;

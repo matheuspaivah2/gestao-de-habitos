@@ -5,29 +5,37 @@ export const Container = styled.div `
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 45vw;
-    height: 45vw;
+    width: 24vh;
+    height: 24vh;
     border: 2px solid #0a315d;
-    border-radius: 10px;
-    margin-bottom: 2.5vw;
+    border-radius: 5px;
 
     h4 {
         background-color: #0a315d;
         color: var(--white); 
         width: 100%;
-        border-radius: 4px 4px 0 0;
-        padding-top: 2px ;
+        border-radius: 1px 1px 0 0;
         overflow: hidden;
         height: 7vw;
+        font-size: 3vh;
+    }
+
+    p {
+        font-size: 2.6vh;
     }
 
     .description {
-        padding: 2px 0;
-        height: 28vw;
         display: flex;
         align-items: center;
-        overflow: hidden;
-        font-size: 0.9rem;
+        height: 60%;
+        width: 95%;
+
+        p {
+            text-align: center;
+            width: 100%;
+            max-height: 100%;
+            overflow: scroll;
+        }
     }
 `;
 

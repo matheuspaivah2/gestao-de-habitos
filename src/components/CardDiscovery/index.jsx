@@ -12,7 +12,9 @@ const CardDiscovery = ({ group }) => {
         <Container onClick={() => setToggle(!toggle)}>
             
                     <h4>{name}</h4>
-                    <p className="description">{description}</p>
+                    <div className="description">
+                        <p>{description}</p>
+                    </div>
                     <p><strong>{category}</strong></p>
                 
             {toggle && <CardJoinGroup toggle={toggle} setToggle={setToggle} group={group}/>}
