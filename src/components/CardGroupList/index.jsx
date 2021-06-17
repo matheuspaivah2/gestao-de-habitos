@@ -8,7 +8,7 @@ const CardGroupList = () => {
 
   const loadGroups = () => {
     const token = localStorage.getItem("@GestãoDeHábitos:access") || "";
-    console.log(JSON.parse(token));
+
     axios
       .get("https://kabit-api.herokuapp.com/groups/subscriptions/", {
         headers: {
