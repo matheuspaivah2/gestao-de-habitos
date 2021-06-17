@@ -5,37 +5,37 @@ import { makeStyles, Modal, Checkbox } from "@material-ui/core";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
-import api from '../../services/api'
-
+import api from "../../services/api";
+import { buildStyles } from "react-circular-progressbar";
 const Goal = ({ goal, setModalGoal, modalGoal, setGoal }) => {
-  const [disabledCheck, setDisabledCheck] = useState(false)
-  const [checked, setChecked] = useState(localStorage.getItem('dailyCheck'))
-  const [counter, setCounter] = useState(0)
+  const [disabledCheck, setDisabledCheck] = useState(false);
+  const [checked, setChecked] = useState(localStorage.getItem("dailyCheck"));
+  const [counter, setCounter] = useState(0);
 
   useEffect(() => {
-    setChecked(localStorage.getItem('dailyCheck'))
-  }, [])
+    setChecked(localStorage.getItem("dailyCheck"));
+  }, []);
 
   const handleCheck = (e) => {
-    setCounter(counter + 14)
-    if(counter > 83) {
-      setCounter(100)
+    setCounter(counter + 14);
+    if (counter > 83) {
+      setCounter(100);
     }
     if (e.target.checked === true) {
       api.patch(`/goals/${goal.id}/`, {
-        how_much_achieved: counter
-      })
-      setDisabledCheck(true)
-      setChecked(true)
-      toast.success("Daily goal checked")
-      localStorage.setItem('dailyCheck', true);
+        how_much_achieved: counter,
+      });
+      setDisabledCheck(true);
+      setChecked(true);
+      toast.success("Daily goal checked");
+      localStorage.setItem("dailyCheck", true);
       setTimeout(() => {
-        localStorage.setItem('dailyCheck', false)
-        setDisabledCheck(false)
-        setChecked(false)
+        localStorage.setItem("dailyCheck", false);
+        setDisabledCheck(false);
+        setChecked(false);
       }, 2000);
     }
-  }
+  };
 
   const handleClose = () => {
     setModalGoal(false);
@@ -99,7 +99,8 @@ const Goal = ({ goal, setModalGoal, modalGoal, setGoal }) => {
         <div className={classes.paper}>
           <Container>
             <div className="container__nameGoal">
-              <strong>{"Goal"}</strong>
+              <strong>Goal</strong>
+              <div onClick={() => handleClose()}>X</div>
             </div>
 
             <div className="container__infoGoal">
@@ -109,16 +110,23 @@ const Goal = ({ goal, setModalGoal, modalGoal, setGoal }) => {
                 <Progress
                   value={counter}
                   text={`${counter}%`}
+                  styles={buildStyles({
+                    pathColor: "#0a315d",
+                    textColor: "#0a315d",
+                    trailColor: "rgb(234 169 143)",
+                  })}
                 />
                 <div className="check">
-                  <Checkbox checked={checked} disabled={disabledCheck} onChange={e => handleCheck(e)}/>
+                  <Checkbox
+                    checked={checked}
+                    disabled={disabledCheck}
+                    onChange={(e) => handleCheck(e)}
+                  />
                   <span>Daily check</span>
                 </div>
               </div>
-              <div className="container__buttons">
-                <button onClick={() => handleClose()}>Back</button>
-                <button onClick={() => handleDelete()}>Delete</button>
-              </div>
+
+              <button onClick={() => handleDelete()}>Delete</button>
             </div>
           </Container>
         </div>

@@ -1,4 +1,4 @@
-import { Container, Input, HiddenInput } from "./styles";
+import { Container, Input } from "./styles";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { makeStyles, Modal, TextField } from "@material-ui/core";
@@ -90,6 +90,7 @@ const NewActivity = ({ groupId, openNewActivity, setOpenNewActivity }) => {
           <Container>
             <div className="container__nameGoal">
               <strong>New Activity</strong>
+              <div onClick={() => handleClose()}>X</div>
             </div>
 
             <form
@@ -122,10 +123,7 @@ const NewActivity = ({ groupId, openNewActivity, setOpenNewActivity }) => {
                 helperText={errors.realization_time?.message}
               />
 
-              <div className="container__buttons">
-                <button onClick={() => handleClose()}>Back</button>
-                <button type="submit">Register</button>
-              </div>
+              <button type="submit">Register</button>
             </form>
           </Container>
         </div>
