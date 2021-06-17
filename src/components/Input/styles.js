@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   text-align: left;
-  padding: 1px;
   padding-top: 1.5vh;
   padding-bottom: 1.5vh;
   div {

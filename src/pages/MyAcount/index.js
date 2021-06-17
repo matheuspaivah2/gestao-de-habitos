@@ -57,22 +57,22 @@ const MyAcount = () => {
         }
         ,[token])
 
-    if(!token){
-        getToken()
-        return <Redirect to="/login"/>
-    }
+        const tok = JSON.parse(localStorage.getItem("@GestãoDeHábitos:access")) || "";
+        if(!tok){
+            return <Redirect to="/login"/>
+        }
 
 
     return(
         <Container>
-            <h1>Alterar Usuário</h1>
+            <h1>Change User</h1>
             <AnimationContainer>
               <form onSubmit={handleSubmit(handleSubmitFunction)}>
-                    <h3>Username atual: {usuario.username}</h3>
-                    <h3>Email atual: {usuario.email}</h3>
-                    <Input register={register} name="username" icon={FiUser} placeholder="Seu Novo Username" error={errors.username?.message}/>
-                    <Input register={register} name="email" icon={FiVoicemail} placeholder="Seu Novo Email" error={errors.email?.message}/>
-                    <Button type="submit" size={"90%"}>Alterar</Button>
+                    <p>Username: <a>{usuario.username}</a></p>
+                    <p>Email: <a>{usuario.email}</a></p>
+                    <Input register={register} name="username" icon={FiUser} placeholder="Your New Username" error={errors.username?.message}/>
+                    <Input register={register} name="email" icon={FiVoicemail} placeholder="Your New Email" error={errors.email?.message}/>
+                    <Button type="submit" size={"90%"}>Change</Button>
               </form>
               <Button handle={()=>(localStorage.removeItem('@GestãoDeHábitos:access'), history.push("/login"))} >Logout</Button>
             </AnimationContainer>

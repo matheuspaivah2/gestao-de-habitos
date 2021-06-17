@@ -31,14 +31,17 @@ export const AnimationContainer = styled.div`
     justify-content:center;
     animation: ${appearFromRight} 1s;
     form{
-        width:135%;
+        width:160%;
         text-align:center;
+        max-width: 320px;
     }
     h3{
         text-align: left;
     }
     p{
+        margin-left:4px;
         margin-top:8px;
+        text-align: left;
         a{
             font-weight: bold;
             color: var(--orange);

@@ -44,11 +44,11 @@ const Login = () => {
             <AnimationContainer>
               <form onSubmit={handleSubmit(handleSubmitFunction)}>
                     <h1>Login</h1>
-                    <Input register={register} name="username" icon={FiUser} placeholder="Seu Username" error={errors.username?.message}/>
-                    <Input register={register} name="password" icon={FiLock} placeholder="Sua Senha" type="password" error={errors.password?.message}/>
-                    <Button type="submit" size={"99%"}>Entrar</Button>     
+                    <Input register={register} name="username" icon={FiUser} placeholder="Your Username" error={errors.username?.message}/>
+                    <Input register={register} name="password" icon={FiLock} placeholder="Your Password" type="password" error={errors.password?.message}/>
+                    <Button type="submit" size={"100%"}>Login</Button>     
               </form>
-              <p>Não tem conta? Faça já sua <Link to="/signup">Conta</Link></p>
+              <p>Don't have an account? Create a Habits <Link to="/signup">Account</Link></p>
             </AnimationContainer>
         </Container>
     )
