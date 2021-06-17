@@ -1,5 +1,5 @@
 import jwt_decode from 'jwt-decode';
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useEffect, useState } from 'react';
 import api from '../../services/api';
 
 export const HabitsContext = createContext();
@@ -7,6 +7,7 @@ export const HabitsContext = createContext();
 const HabitsProvider = ({children}) => {
   const [user_id, setUser_id] = useState("")
   const [token, setToken] = useState(null)
+  const [habits, setHabits] = useState([]);
 
   const getToken = () => {
     const localToken = JSON.parse(localStorage.getItem('@GestãoDeHábitos:access'))
@@ -19,13 +20,25 @@ const HabitsProvider = ({children}) => {
     }
   }
 
+  const getHabits = useCallback(() => {
+    console.log("passou pelo cardList", token)
+    const localToken = JSON.parse(localStorage.getItem('@GestãoDeHábitos:access'))
+    api.defaults.headers.authorization = `Bearer ${localToken}`;
+    api.get("/habits/personal/")
+    .then(res => setHabits(res.data))
+  }, [habits])
+
   useEffect (() => {
     getToken();
   })
 
+  useEffect(() => {
+    getHabits();
+  }, [])
+
   console.log("passou pelo provider",token)
   return (
-    <HabitsContext.Provider value={{token: token, user_id, setToken}}>
+    <HabitsContext.Provider value={{token: token, user_id, setToken, habits, getHabits}}>
       {children}
     </HabitsContext.Provider>
   )

@@ -9,9 +9,13 @@ import Container, {
 import { useState } from "react";
 import CardList from "../../components/Habits/CardList";
 import NewHabit from "../../components/Habits/NewHabit";
+import {useContext} from 'react'
+import {HabitsContext} from '../../providers/habits'
+import { Redirect } from 'react-router-dom'
 
 const Habits = () => {
   const [open, setOpen] = useState(false);
+  const {token} = useContext(HabitsContext)
 
   const useStyles = makeStyles((theme) => ({
     modal: {
@@ -29,6 +33,10 @@ const Habits = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
+  if(!token){
+    return <Redirect to="/login"/>
+  }
 
   return (
     <>
