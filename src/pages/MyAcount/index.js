@@ -1,6 +1,5 @@
-import Button from "../../components/Button"
 import Input from "../../components/Input"
-import {Container,AnimationContainer} from "./styles"
+import {Container,AnimationContainer, Button} from "./styles"
 import {FiUser, FiVoicemail} from "react-icons/fi"
 import * as yup from 'yup';
 import { useForm } from "react-hook-form";
@@ -72,9 +71,9 @@ const MyAcount = () => {
                     <p>Email: <a>{usuario.email}</a></p>
                     <Input register={register} name="username" icon={FiUser} placeholder="Your New Username" error={errors.username?.message}/>
                     <Input register={register} name="email" icon={FiVoicemail} placeholder="Your New Email" error={errors.email?.message}/>
-                    <Button type="submit" size={"90%"}>Change</Button>
+                    <Button size={'100%'}>Change</Button>
               </form>
-              <Button handle={()=>(localStorage.removeItem('@GestãoDeHábitos:access'), history.push("/login"))} >Logout</Button>
+              <Button size={'40%'} margin={'40px'}onClick={()=>(localStorage.removeItem('@GestãoDeHábitos:access'), history.push("/login"))} >Logout</Button>
             </AnimationContainer>
             
         </Container>
