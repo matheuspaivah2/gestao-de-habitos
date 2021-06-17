@@ -31,7 +31,7 @@ export const AnimationContainer = styled.div`
     justify-content:center;
     animation: ${appearFromRight} 1s;
     form{
-        width:100%;
+        width:135%;
         text-align:center;
     }
     h3{

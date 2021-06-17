@@ -46,9 +46,9 @@ const Login = () => {
                     <h1>Login</h1>
                     <Input register={register} name="username" icon={FiUser} placeholder="Seu Username" error={errors.username?.message}/>
                     <Input register={register} name="password" icon={FiLock} placeholder="Sua Senha" type="password" error={errors.password?.message}/>
-                    <Button type="submit" size={"99%"}>Entrar</Button>
-                    <p>Não tem conta? Faça sua <Link to="/signup">Conta</Link></p>
+                    <Button type="submit" size={"99%"}>Entrar</Button>     
               </form>
+              <p>Não tem conta? Faça já sua <Link to="/signup">Conta</Link></p>
             </AnimationContainer>
         </Container>
     )

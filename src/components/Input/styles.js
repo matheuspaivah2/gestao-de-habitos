@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   text-align: left;
-  padding: 6px;
+  padding: 1px;
   padding-top: 1.5vh;
   padding-bottom: 1.5vh;
   div {
@@ -18,7 +18,7 @@ export const InputContainer = styled.div`
   border: 2px solid var(--black);
   color: var(--gray);
   padding: 0.7rem;
-  width: 100%;
+
   display: flex;
   transition: 0.5s;
 
