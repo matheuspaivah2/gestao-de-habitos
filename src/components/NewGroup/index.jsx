@@ -60,6 +60,8 @@ const NewGroup = ({ openNewGroup, setOpenNewGroup }) => {
       alignItems: "center",
       justifyContent: "center",
       width: "",
+      maxWidth: "500px",
+      margin: "0 auto",
     },
     paper: {
       backgroundColor: theme.palette.background.paper,

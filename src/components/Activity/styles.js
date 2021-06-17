@@ -23,14 +23,20 @@ export const Container = styled.div`
     padding: 6vw;
     padding-right: 4vw;
     strong {
-      font-size: 1.4rem;
+      font-size: 1.1rem;
       color: white;
       font-weight: bolder;
+      @media (min-width: 768px) {
+        font-size: 1.9rem;
+      }
     }
     div {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: white;
       cursor: pointer;
+      @media (min-width: 768px) {
+        font-size: 1.9rem;
+      }
     }
   }
 
@@ -42,26 +48,37 @@ export const Container = styled.div`
     margin-top: 2vh;
     row-gap: 2vh;
     padding: 4px;
+    width: 100%;
     height: 81%;
 
     h2 {
       text-transform: uppercase;
       font-size: 1.1rem;
       text-align: center;
+      @media (min-width: 768px) {
+        font-size: 2rem;
+      }
     }
     p {
       font-size: 1rem;
+      @media (min-width: 768px) {
+        font-size: 1.9rem;
+      }
     }
   }
   button {
-    width: 60%;
-    border: 2px solid black;
+    width: 50%;
+    border: none;
     background-color: #0a315d;
     border-radius: 4px;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bolder;
-    padding: 6px;
+    padding: 8px;
     font-family: "Londrina Solid", cursive;
+    @media (min-width: 768px) {
+      width: 50%;
+      font-size: 1.6rem;
+    }
   }
 `;
