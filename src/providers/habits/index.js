@@ -33,7 +33,9 @@ const HabitsProvider = ({children}) => {
   });
 
   useEffect(() => {
+    if (token) {
     getHabits();
+    }
   }, [])
 
   console.log("passou pelo provider",token)
