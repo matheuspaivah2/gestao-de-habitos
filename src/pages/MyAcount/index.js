@@ -1,6 +1,6 @@
 import Input from "../../components/Input"
 import {Container,AnimationContainer, Button} from "./styles"
-import {FiUser, FiVoicemail} from "react-icons/fi"
+import {FiUser, FiVoicemail, FiLock} from "react-icons/fi"
 import * as yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -26,21 +26,26 @@ const MyAcount = () => {
         }
     }
     const forSchema = yup.object().shape({
-        username: yup.string().required("Username Obrigatótio"),
-        email: yup.string().required("email Obrigatótio")
+        usernameAtual: yup.string().required("Username Obrigatótio"),
+        password: yup.string().required("Campo Obrigatório"),
+        username: yup.string().required("Campo Obrigatório"),
       })
     const{register, handleSubmit, formState:{errors}} = useForm({
         resolver: yupResolver(forSchema)
     });  
-    
     const handleSubmitFunction = (data) => {
-        if(token){
-            api.patch(`/users/${decode.user_id}/`, data, {Authorization: `Bearer ${token}`})
-            .then(()=> {toast.success(`Seu email agora é ${data.email}`)})
-            .then(()=> {toast.success(`Seu usuário agora é ${data.username}`)})
-            .then(()=>submitFunction())
-            .catch((err) => toast.error('Erro ao editar usuário'))
-        }else{return}
+        var confirm = {username:`${data.usernameAtual}`, password:`${data.password}`}
+        var submit = {username:`${data.username}`}
+        api.post("/sessions/", confirm)
+        .then(()=> {
+            if(token){
+                api.patch(`/users/${decode.user_id}/`, submit, {Authorization: `Bearer ${token}`})
+                .then(()=> {toast.success(`Your Username Is ${data.username}`)})
+                .then(()=>submitFunction())
+                .catch((err) => toast.error('User Already Exists'))
+            }else{return}
+        })
+        .catch((err) => toast.error('Password or User Incorrect'))  
     }
     const submitFunction = () => {
         if(token){
@@ -64,16 +69,19 @@ const MyAcount = () => {
 
     return(
         <Container>
-            <h1>Change User</h1>
             <AnimationContainer>
-              <form onSubmit={handleSubmit(handleSubmitFunction)}>
+                <form onSubmit={handleSubmit(handleSubmitFunction)}>
+                    <h1>Change User</h1>
                     <p>Username: <a>{usuario.username}</a></p>
                     <p>Email: <a>{usuario.email}</a></p>
+                    <form onSubmit={handleSubmit()}>
+                        <Input register={register} name="usernameAtual" icon={FiUser} placeholder="Your Username" error={errors.username?.message}/>
+                        <Input register={register} name="password" icon={FiLock} placeholder="Your Password" type="password" error={errors.password?.message}/>
+                    </form>
                     <Input register={register} name="username" icon={FiUser} placeholder="Your New Username" error={errors.username?.message}/>
-                    <Input register={register} name="email" icon={FiVoicemail} placeholder="Your New Email" error={errors.email?.message}/>
-                    <Button size={'100%'}>Change</Button>
-              </form>
-              <Button size={'40%'} margin={'40px'}onClick={()=>(localStorage.removeItem('@GestãoDeHábitos:access'), history.push("/login"))} >Logout</Button>
+                    <Button type="submit" size={'100%'}>Change</Button>
+                    <Button size={'40%'} margin={'40px'} onClick={()=>(localStorage.removeItem('@GestãoDeHábitos:access'), history.push("/login"))} >Logout</Button>
+                </form>
             </AnimationContainer>
             
         </Container>
