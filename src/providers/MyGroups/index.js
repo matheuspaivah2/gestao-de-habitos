@@ -25,8 +25,11 @@ export const MyGroupsProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
+    const token = localStorage.getItem("@GestãoDeHábitos:access") || "";
+    if (token) {
     loadGroups();
-  });
+    }
+  }, []);
 
   return (
     <MyGroupsContext.Provider value={{ myGroups, loadGroups }}>
