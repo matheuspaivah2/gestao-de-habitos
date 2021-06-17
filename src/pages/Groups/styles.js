@@ -4,11 +4,13 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  max-width: 1000px;
+  margin: 0 auto;
 
   .container__PageName {
     margin: 0 auto;
     height: 7vh;
-    width: 90%;
+    width: 40%;
     background-color: #0a315d;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
