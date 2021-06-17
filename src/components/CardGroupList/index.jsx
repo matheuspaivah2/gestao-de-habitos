@@ -1,7 +1,6 @@
 import { Container } from "./styles";
 import CardGroup from "../CardGroup";
-import axios from "axios";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { useEffect } from "react";
 import { MyGroupsContext } from '../../providers/MyGroups'
 
