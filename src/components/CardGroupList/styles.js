@@ -3,7 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 
 export const Container = styled(Carousel)`
-  margin-top: 3vh;
+  margin-top: 0vh;
   height: 80vh;
   .carousel {
     height: 80vh;
