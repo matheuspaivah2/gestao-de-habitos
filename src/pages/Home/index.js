@@ -1,7 +1,7 @@
 import { Container, ButtonHome } from "./styles";
-import BackgroundHome from "../../assests/back2.jpg";
-import Logo from "../../assests/logoHome.png";
+import Logo from "../../assests/logoLaranja.png";
 import { Redirect, useHistory } from "react-router";
+
 const Home = () => {
   const history = useHistory();
   const token = localStorage.getItem("@GestãoDeHábitos:access") || false;
@@ -18,9 +18,6 @@ const Home = () => {
   }
   return (
     <Container>
-      {/* <figure>
-        <img src={BackgroundHome} alt=""></img>
-      </figure> */}
       <div className="container__Logo">
         <img src={Logo} alt="logo" className="logo"></img>
       </div>

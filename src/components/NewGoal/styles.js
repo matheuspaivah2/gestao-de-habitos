@@ -17,11 +17,14 @@ export const Container = styled.div`
     background-color: #0a315d;
     display: flex;
     justify-content: space-between;
-    padding: 3vw;
+    padding: 3.5vh;
     align-items: center;
     border-bottom: 2px solid black;
+    @media (min-width: 768px) {
+      max-height: 10px;
+    }
     strong {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: white;
       font-weight: bolder;
       @media (min-width: 768px) {
@@ -57,7 +60,8 @@ export const Container = styled.div`
     width: 50%;
     border: none;
     background-color: #0a315d;
-    border-radius: 4px;
+    border-radius: 2px;
+    border: 2px solid black;
     color: white;
     font-size: 1.1rem;
     font-weight: bolder;
@@ -66,6 +70,7 @@ export const Container = styled.div`
     @media (min-width: 768px) {
       width: 50%;
       font-size: 1.6rem;
+      cursor: pointer;
     }
   }
 `;
@@ -86,3 +91,21 @@ export const Input = withStyles({
     },
   },
 })(TextField);
+
+export const MySelect = styled.select`
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  color: rgba(0, 0, 0, 0.54);
+  padding: 0.7rem;
+  width: 80%;
+  display: flex;
+  transition: 0.5s;
+  font-size: 1rem;
+  @media (min-width: 768px) {
+    height: 7vh;
+  }
+  option {
+    background-color: white;
+  }
+`;

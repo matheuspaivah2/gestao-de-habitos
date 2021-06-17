@@ -22,6 +22,10 @@ export const Container = styled.div`
     border-bottom: 2px solid black;
     padding: 6vw;
     padding-right: 4vw;
+    @media (min-width: 768px) {
+      padding: 3vh;
+      max-height: 80px;
+    }
     strong {
       font-size: 1.1rem;
       color: white;
@@ -53,14 +57,17 @@ export const Container = styled.div`
 
     h2 {
       text-transform: uppercase;
-      font-size: 1.1rem;
+      font-size: 1.4rem;
       text-align: center;
+      overflow: hidden;
+      max-height: 50px;
       @media (min-width: 768px) {
         font-size: 2rem;
+        max-height: 100px;
       }
     }
     p {
-      font-size: 1rem;
+      font-size: 1.2rem;
       @media (min-width: 768px) {
         font-size: 1.9rem;
       }
@@ -79,6 +86,7 @@ export const Container = styled.div`
     @media (min-width: 768px) {
       width: 50%;
       font-size: 1.6rem;
+      cursor: pointer;
     }
   }
 `;

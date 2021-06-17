@@ -6,7 +6,7 @@ const CardGroupDefault = () => {
       <div>
         <h2>
           You don't have any group yet, <br /> click on 'new group' above to
-          create an habit.
+          create a group.
         </h2>
       </div>
     </Container>

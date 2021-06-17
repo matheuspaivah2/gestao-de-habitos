@@ -114,7 +114,7 @@ const Goal = ({ goal, setModalGoal, modalGoal, setGoal }) => {
                   styles={buildStyles({
                     pathColor: "#0a315d",
                     textColor: "#0a315d",
-                    trailColor: "rgb(234 169 143)",
+                    trailColor: "#FFC862",
                   })}
                 />
                 <div className="check">
