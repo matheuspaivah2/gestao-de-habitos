@@ -12,14 +12,14 @@ export const Container = styled.div`
   min-height: 350px;
   margin-top: 4vh;
   height: 65vh;
-  /* background-color: #ffffff;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='79' height='79' viewBox='0 0 200 200'%3E%3Cpolygon fill='%23DCEFFA' points='100 0 0 100 100 100 100 200 200 100 200 0'/%3E%3C/svg%3E"); */
-  background: rgba( 7, 7, 7, 0.25 );
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='79' height='79' viewBox='0 0 200 200'%3E%3Cpolygon fill='%23DCEFFA' points='100 0 0 100 100 100 100 200 200 100 200 0'/%3E%3C/svg%3E");
+  /* background: rgba( 7, 7, 7, 0.25 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba( 255, 255, 255, 0.18 ); */
 
   .container--NameGroup {
     margin: 0 auto;
@@ -50,10 +50,10 @@ export const Container = styled.div`
 
     li {
       font-size: 1.2rem;
-      color: #566cd1;
+      color: #09315D;
 
       span {
-        color: #fff;
+        color: #000;
       }
     }
   }

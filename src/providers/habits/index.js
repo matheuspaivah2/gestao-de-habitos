@@ -36,7 +36,7 @@ const HabitsProvider = ({children}) => {
     if (token) {
     getHabits();
     }
-  }, [])
+  }, [token])
 
   console.log("passou pelo provider",token)
   return (
