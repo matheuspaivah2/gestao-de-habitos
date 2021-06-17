@@ -75,7 +75,7 @@ export const BtMenu = styled.figure`
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background-color: #d7d5fc73;
+    background-color: #7a76b673;
     border-bottom: 1px solid #354b84;
     cursor: pointer;
     border-radius: 2px;
