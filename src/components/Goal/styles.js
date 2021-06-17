@@ -15,24 +15,30 @@ export const Container = styled.div`
     margin: 0;
     height: 9vh;
     width: 100%;
-    background-color: #056479;
-    /* border-bottom-left-radius: 100px;
-    border-bottom-right-radius: 100px; */
+    background-color: #0a315d;
+
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid black;
+    padding: 6vw;
+    padding-right: 4vw;
     strong {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: white;
       font-weight: bolder;
+    }
+    div {
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
     }
   }
 
   .container__infoGoal {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     margin-top: 2vh;
     row-gap: 2vh;
@@ -52,16 +58,16 @@ export const Container = styled.div`
       margin-top: 4vh;
       .check {
         display: flex;
-        width: 50%;
+        width: 65%;
         max-width: 155px;
 
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
         padding-left: 4px;
         padding-right: 4px;
         border-radius: 4px;
         border: 2px solid black;
-        background-color: #3e98c7;
+        background-color: #0a315d;
 
         span {
           font-size: 1.1rem;
@@ -70,26 +76,16 @@ export const Container = styled.div`
       }
     }
   }
-
-  .container__buttons {
-    width: 100%;
-    display: flex;
-    column-gap: 3vw;
-    justify-content: center;
-    align-items: center;
-    margin-top: auto;
-    margin-bottom: 1vh;
-
-    button {
-      width: 45%;
-      border: none;
-      background-color: #056479;
-      border-radius: 4px;
-      color: white;
-      font-size: 1rem;
-      font-weight: bolder;
-      padding: 8px;
-    }
+  button {
+    width: 60%;
+    border: 2px solid black;
+    background-color: #0a315d;
+    border-radius: 4px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    padding: 6px;
+    font-family: "Londrina Solid", cursive;
   }
 `;
 

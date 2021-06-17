@@ -77,14 +77,12 @@ const Activity = ({
           <Container>
             <div className="container__nameGoal">
               <strong>Activity</strong>
+              <div onClick={() => handleClose()}>X</div>
             </div>
 
             <div className="container__infoGoal">
               <h2>{activity.title}</h2>
               <p>{activity.realization_time}</p>
-            </div>
-            <div className="container__buttons">
-              <button onClick={() => handleClose()}>Back</button>
               <button onClick={() => handleDelete()}>Delete</button>
             </div>
           </Container>

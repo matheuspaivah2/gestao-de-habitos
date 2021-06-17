@@ -8,10 +8,12 @@ export const Container = styled.div`
   .container__PageName {
     margin: 0 auto;
     height: 7vh;
-    width: 70%;
+    width: 90%;
     background-color: #0a315d;
-    border-bottom-left-radius: 100px;
-    border-bottom-right-radius: 100px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border: 2px solid black;
+    border-top: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,13 +26,13 @@ export const Container = styled.div`
 `;
 
 export const Button = styled.button`
-  border: none;
+  border: 2px solid black;
   width: 90%;
-  padding: 1.5vh;
+  padding: 1.6vh;
   color: white;
   background-color: #0a315d;
-  font-size: 1rem;
-  border-radius: 4px;
+  font-size: 1.1rem;
+  border-radius: 3px;
   margin: 0 auto;
   margin-top: 3vh;
   text-align: left;

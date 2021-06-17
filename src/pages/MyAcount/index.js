@@ -62,6 +62,7 @@ const MyAcount = () => {
         return <Redirect to="/login"/>
     }
 
+
     return(
         <Container>
             <h1>Alterar Usuário</h1>

@@ -18,7 +18,7 @@ const HabitsProvider = ({children}) => {
       const decoded = jwt_decode(localToken)
       setUser_id(decoded.user_id)
     }
-  }
+  };
 
   const getHabits = useCallback(() => {
     console.log("passou pelo cardList", token)
@@ -30,7 +30,7 @@ const HabitsProvider = ({children}) => {
 
   useEffect (() => {
     getToken();
-  })
+  });
 
   useEffect(() => {
     getHabits();
@@ -41,7 +41,7 @@ const HabitsProvider = ({children}) => {
     <HabitsContext.Provider value={{token: token, user_id, setToken, habits, getHabits}}>
       {children}
     </HabitsContext.Provider>
-  )
-}
+  );
+};
 
-export default HabitsProvider
+export default HabitsProvider;
