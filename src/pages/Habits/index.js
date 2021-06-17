@@ -40,9 +40,6 @@ const Habits = () => {
 
   return (
     <>
-      <BackgroundHeading>
-        <strong>Habits</strong>
-      </BackgroundHeading>
       <Container>
         <AnimationContainer>
           <Button onClick={handleOpen}>New habit</Button>
