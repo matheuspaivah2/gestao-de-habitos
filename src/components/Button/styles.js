@@ -12,4 +12,7 @@ export const Container = styled.button`
   background-color: ${({ white }) => (white ? "white" : "black")};
   font-size: 0.8rem;
   cursor: pointer;
+  @media(max-width: 400px) {
+        margin-top:10px;
+    }
 `;

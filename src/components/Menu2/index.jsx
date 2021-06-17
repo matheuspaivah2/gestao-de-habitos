@@ -32,14 +32,16 @@ const useStyles = makeStyles({
     width: "25vw",
   },
   toolbar: {
-    backgroundColor: "#d7d5fc73",
+    backgroundColor: "#7a76b673",
     width: "100%",
     height: "5vh",
     margin: "0 auto",
-    maxWidth: "1500px",
+    paddingBottom: "1vh",
+    paddingTop: "1vh",
+    paddingLeft: "2px",
   },
   appbar: {
-    backgroundColor: "#d7d5fc73",
+    backgroundColor: "#7a76b673",
     boxSizing: "borderbox",
   },
 });
@@ -194,15 +196,57 @@ export default function SwipeableTemporaryDrawer() {
             fontWeight="fontWeightBold"
           >
             <Toolbar className={classes.toolbar}>
-              <LogoDesk htmlFor="">
+              <LogoDesk htmlFor="" onClick={() => handleClick("/dashboard")}>
                 <img src={Logo} alt="Logo" />
               </LogoDesk>
               <ContainerDesk>
-                <ButtonMenu>Catalog</ButtonMenu>
+                <ButtonMenu
+                  style={{ marginLeft: "auto" }}
+                  onClick={() => handleClick("/habits")}
+                >
+                  <FaRegUser
+                    style={{
+                      width: "50px",
+                      height: "30px",
+                      color: "white",
+                    }}
+                  />
+                  <span>Habits</span>
+                </ButtonMenu>
 
-                <ButtonMenu>Wedding</ButtonMenu>
-                <ButtonMenu>Graduation</ButtonMenu>
-                <ButtonMenu>Confraternization</ButtonMenu>
+                <ButtonMenu onClick={() => handleClick("/groups")}>
+                  <FiUsers
+                    style={{
+                      width: "50px",
+                      height: "30px",
+                      color: "white",
+                    }}
+                  />
+                  <span>Groups</span>
+                </ButtonMenu>
+                <ButtonMenu onClick={() => handleClick("/discovery")}>
+                  <IoRocketOutline
+                    style={{
+                      width: "50px",
+                      height: "30px",
+                      color: "white",
+                    }}
+                  />
+                  <span>Discovery</span>
+                </ButtonMenu>
+                <ButtonMenu
+                  style={{ alignSelf: "flex-end" }}
+                  onClick={() => handleClick("/myacount")}
+                >
+                  <IoSettingsOutline
+                    style={{
+                      width: "50px",
+                      height: "30px",
+                      color: "white",
+                    }}
+                  />
+                  <span>Settings</span>
+                </ButtonMenu>
               </ContainerDesk>
             </Toolbar>
           </AppBar>

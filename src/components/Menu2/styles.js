@@ -109,53 +109,28 @@ export const LogoDesk = styled.div`
   }
 `;
 
-export const ButtonMenu = styled.button`
-  border: none;
-  font-family: "Righteous, cursive";
-
-  background-color: #130707;
-  font-size: 110%;
-  color: white;
-  margin-right: 8px;
-  border-radius: 4px;
+export const ButtonMenu = styled.div`
   cursor: pointer;
-  display: none;
-  &:hover {
-    background-color: white;
-    color: #130707;
-  }
+  width: 120px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 
-  @media (min-width: 768px) {
-    font-size: 130%;
-    display: inline-block;
+  align-items: flex-end;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  span {
+    font-size: 1.3rem;
   }
 `;
 
 export const ContainerDesk = styled.div`
   display: flex;
   margin-left: auto;
-  flex-direction: column;
-  z-index: 5;
-  background-color: #130707;
-  border-radius: 4px;
+  flex-direction: row;
+  width: 70vw;
   padding: 4px;
-
-  &:hover Button {
-    display: block;
-    align-self: flex-start;
-  }
-  &:hover {
-    margin-top: 80px;
-  }
-  @media (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-
-    &:hover Button {
-      align-self: auto;
-    }
-    &:hover {
-      margin-top: 0px;
-    }
-  }
+  column-gap: 6px;
 `;
