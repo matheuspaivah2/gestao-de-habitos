@@ -14,8 +14,8 @@ const Login = () => {
     const { setToken } = useContext(HabitsContext)
 
     const forSchema = yup.object().shape({
-        username: yup.string().required("Username Obrigatótio"),
-        password: yup.string().required("Campo Obrigatório"),
+        username: yup.string().required("Username Required"),
+        password: yup.string().required("Password Required"),
       })
     const{register, handleSubmit, formState:{errors}} = useForm({
         resolver: yupResolver(forSchema)
@@ -31,7 +31,7 @@ const Login = () => {
             setToken(access)
             return history.push('/dashboard')
         })
-        .catch((err) => toast.error('Erro ao logar, Login e/ou senha inválidos'))
+        .catch((err) => toast.error('Error when logging in, login and/or password invalid'))
     }
     const token = JSON.parse(localStorage.getItem("@GestãoDeHábitos:access")) || "";
     if(token){

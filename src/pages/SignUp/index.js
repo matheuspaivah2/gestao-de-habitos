@@ -10,12 +10,12 @@ import{ toast } from 'react-toastify'
 
 const SignUp = () => {
     const forSchema = yup.object().shape({
-        username: yup.string().required("Username Obrigatótio"),
-        email: yup.string().required("Email Obrigatótio").email("Email Inválido"),
+        username: yup.string().required("Required Username"),
+        email: yup.string().required("Required Email").email("Invalid email"),
         password: yup.string().matches(
             /^((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
-            "Senha deve conter ao menos uma letra maiúscula, uma minúscula, um número e um caracter especial!"
-          ).required("Senha obrigatória"),
+            "Password must contain at least one uppercase letter, one lowercase letter, a number and a special character!"
+          ).required("Required Password"),
       })
     const{register, handleSubmit, formState:{errors}} = useForm({
         resolver: yupResolver(forSchema)

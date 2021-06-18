@@ -150,7 +150,7 @@ export default function SwipeableTemporaryDrawer() {
           </ContainerButtons>
           <Button2
             // backImg={Settings}
-            onClick={() => handleClick("/settings")}
+            onClick={() => handleClick("/myacount")}
           >
             <IoSettingsOutline
               style={{
