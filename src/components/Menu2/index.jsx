@@ -107,7 +107,7 @@ export default function SwipeableTemporaryDrawer() {
     >
       <StyledToolBar>
         <ContMenu>
-          <LogoMenu onClick={() => handleClick("/dashboard")}>
+          <LogoMenu onClick={() => handleClick("/habits")}>
             <img src={Logo} alt="Logo" />
           </LogoMenu>
           <ContainerButtons>
