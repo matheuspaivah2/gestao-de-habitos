@@ -3,6 +3,7 @@ import { Container, Groups } from "./styles";
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { useGroups } from "../../providers/Groups";
+import { Redirect } from "react-router-dom";
 
 const Discovery = () => {
     const {groups} = useGroups();
@@ -11,6 +12,9 @@ const Discovery = () => {
     const [input, setInput] = useState("");
     const [type, setType] = useState("category");
     const [results, setResults] = useState(false);
+    const [token] = useState(localStorage.getItem("@GestãoDeHábitos:access") || false);
+
+    
 
     useEffect(() => {
         setRecomGroups(groups.flat().sort(function(a, b) {
@@ -31,9 +35,12 @@ const Discovery = () => {
         setInput("");
     };
 
+    if(!token){
+        return <Redirect to="/login"/>
+    }
+
     return(
         <Container>
-            <h3>Discovery</h3>
             <div className="input">
                 <input value={input} placeholder="Enter a group" onChange={(e) => setInput(e.target.value)}/>
                 <select value={type} onChange={(event) => setType(event.target.value)}>
@@ -46,32 +53,32 @@ const Discovery = () => {
             <Groups showThumbs={false}>
                 {results 
                     ? <div className="groups">
-                        {listGroups.slice(0,4).map((group, index) => (
-                        <CardDiscovery key={index} group={group}/> ))}
+                        {listGroups.slice(0,4).map((group) => (
+                        <CardDiscovery key={group.id} group={group}/> ))}
                     </div>
                     : <div className="groups">
-                        {recomGroups.slice(0,4).map((group, index) => (
-                        <CardDiscovery key={index} group={group}/> ))}
+                        {recomGroups.slice(0,4).map((group) => (
+                        <CardDiscovery key={group.id} group={group}/> ))}
                     </div>
                 }
                 {results 
                     ? <div className="groups">
-                        {listGroups.slice(4,8).map((group, index) => (
-                        <CardDiscovery key={index} group={group}/> ))}
+                        {listGroups.slice(4,8).map((group) => (
+                        <CardDiscovery key={group.id} group={group}/> ))}
                     </div>
                     : <div className="groups">
-                        {recomGroups.slice(4,8).map((group, index) => (
-                        <CardDiscovery key={index} group={group}/> ))}
+                        {recomGroups.slice(4,8).map((group) => (
+                        <CardDiscovery key={group.id} group={group}/> ))}
                     </div>
                 }
                 {results 
                     ? listGroups.length > 8 ? <div className="groups">
-                        {listGroups.slice(8,12).map((group, index) => (
-                        <CardDiscovery key={index} group={group}/> ))}
+                        {listGroups.slice(8,12).map((group) => (
+                        <CardDiscovery key={group.id} group={group}/> ))}
                         </div> : undefined
                     : <div className="groups">
-                        {recomGroups.slice(8,12).map((group, index) => (
-                        <CardDiscovery key={index} group={group}/> ))}
+                        {recomGroups.slice(8,12).map((group) => (
+                        <CardDiscovery key={group.id} group={group}/> ))}
                     </div>
                 }
             </Groups>
