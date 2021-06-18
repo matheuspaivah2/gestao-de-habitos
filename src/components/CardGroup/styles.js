@@ -21,6 +21,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     strong {
       font-size: 1.3rem;
       color: white;
@@ -31,6 +32,18 @@ export const Container = styled.div`
       @media (min-width: 768px) {
         font-size: 2.1rem;
         height: 40px;
+      }
+    }
+    div {
+      width: 3vw;
+      height: 3vh;
+      border-radius: 50px;
+      /* background-color: white; */
+      position: absolute;
+      right: 20px;
+      top: 5px;
+      cursor: pointer;
+      @media (min-width: 768px) {
       }
     }
   }

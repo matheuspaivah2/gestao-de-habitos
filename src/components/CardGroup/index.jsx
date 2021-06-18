@@ -4,9 +4,12 @@ import NewActivity from "../NewActivity";
 import { useState } from "react";
 import Goal from "../Goal";
 import Activity from "../Activity";
+import { IoSettingsOutline } from "react-icons/io5";
+import ModalRemoveGroup from '../ModalRemoveGroup'
 const CardGroup = ({ group }) => {
   const [openNewGoal, setOpenNewGoal] = useState(false);
   const [openNewActivity, setOpenNewActivity] = useState(false);
+  const [openUpdateGroup, setOpenUpdateGroup] = useState(false);
 
   const [modalGoal, setModalGoal] = useState(false);
   const [goal, setGoal] = useState([]);
@@ -30,10 +33,23 @@ const CardGroup = ({ group }) => {
   const handleNewActivity = () => {
     setOpenNewActivity(true);
   };
+
+  const handleUpdateGroup = () => {
+    setOpenUpdateGroup(true);
+  };
   return (
     <Container>
       <div className="container--NameGroup">
         <strong>{group.name}</strong>
+        <div className="remove_group" onClick={() => handleUpdateGroup()}>
+          <IoSettingsOutline
+            style={{
+              width: "20px",
+              height: "30px",
+              color: "white",
+            }}
+          />
+        </div>
       </div>
       <p>{group.description}</p>
       <span className="category">{group.category}</span>
@@ -94,6 +110,11 @@ const CardGroup = ({ group }) => {
         setModalActivity={setModalActivity}
         activity={activity}
         setActivity={setActivity}
+      />
+      <ModalRemoveGroup
+      setOpenUpdateGroup={setOpenUpdateGroup}
+      openUpdateGroup={openUpdateGroup}
+      group={group}
       />
     </Container>
   );

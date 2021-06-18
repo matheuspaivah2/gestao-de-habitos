@@ -10,4 +10,9 @@ export const Container = styled(Carousel)`
   .carousel {
     height: 75vh;
   }
+  @media (min-width: 768px) {
+    .carousel.carousel-slider .control-arrow {
+      background-color: #0a315dc4;
+    }
+  }
 `;
