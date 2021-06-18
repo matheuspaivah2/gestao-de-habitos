@@ -22,7 +22,8 @@ const CardJoinGroup = ({group, toggle, setToggle}) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          width: "",
+          maxWidth: "1000px",
+          margin: "0 auto",
         },
         paper: {
           backgroundColor: theme.palette.background.paper,

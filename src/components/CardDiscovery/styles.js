@@ -5,12 +5,13 @@ export const Container = styled.div `
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 24vh;
-    height: 24vh;
+    width: 45%;
+    height: 40%;
     border: 2px solid #0a315d;
     border-radius: 5px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='79' height='79' viewBox='0 0 200 200'%3E%3Cpolygon fill='%23DCEFFA' points='100 0 0 100 100 100 100 200 200 100 200 0'/%3E%3C/svg%3E");
     background-color: #ffffff;
+    cursor: pointer;
 
     h4 {
         background-color: #0a315d;
@@ -19,8 +20,8 @@ export const Container = styled.div `
         border-radius: 1px 1px 0 0;
         overflow: hidden;
         height: 22%;
-        font-size: 3vh;
-        align-items: center;
+        font-size: 2.8vh;
+        text-align: center;
     }
 
     p {

@@ -15,7 +15,7 @@ const CardDiscovery = ({ group }) => {
                     </div>
                     <p><strong>{category}</strong></p>
                 
-            {toggle && <CardJoinGroup toggle={toggle} setToggle={setToggle} group={group}/>}
+            <CardJoinGroup toggle={toggle} setToggle={setToggle} group={group}/>
         </Container>
     );
 }

@@ -41,7 +41,6 @@ const Discovery = () => {
 
     return(
         <Container>
-            <h3>Discovery</h3>
             <div className="input">
                 <input value={input} placeholder="Enter a group" onChange={(e) => setInput(e.target.value)}/>
                 <select value={type} onChange={(event) => setType(event.target.value)}>
@@ -54,32 +53,32 @@ const Discovery = () => {
             <Groups showThumbs={false}>
                 {results 
                     ? <div className="groups">
-                        {listGroups.slice(0,4).map((group, index) => (
-                        <CardDiscovery key={index} group={group}/> ))}
+                        {listGroups.slice(0,4).map((group) => (
+                        <CardDiscovery key={group.id} group={group}/> ))}
                     </div>
                     : <div className="groups">
-                        {recomGroups.slice(0,4).map((group, index) => (
-                        <CardDiscovery key={index} group={group}/> ))}
+                        {recomGroups.slice(0,4).map((group) => (
+                        <CardDiscovery key={group.id} group={group}/> ))}
                     </div>
                 }
                 {results 
                     ? <div className="groups">
-                        {listGroups.slice(4,8).map((group, index) => (
-                        <CardDiscovery key={index} group={group}/> ))}
+                        {listGroups.slice(4,8).map((group) => (
+                        <CardDiscovery key={group.id} group={group}/> ))}
                     </div>
                     : <div className="groups">
-                        {recomGroups.slice(4,8).map((group, index) => (
-                        <CardDiscovery key={index} group={group}/> ))}
+                        {recomGroups.slice(4,8).map((group) => (
+                        <CardDiscovery key={group.id} group={group}/> ))}
                     </div>
                 }
                 {results 
                     ? listGroups.length > 8 ? <div className="groups">
-                        {listGroups.slice(8,12).map((group, index) => (
-                        <CardDiscovery key={index} group={group}/> ))}
+                        {listGroups.slice(8,12).map((group) => (
+                        <CardDiscovery key={group.id} group={group}/> ))}
                         </div> : undefined
                     : <div className="groups">
-                        {recomGroups.slice(8,12).map((group, index) => (
-                        <CardDiscovery key={index} group={group}/> ))}
+                        {recomGroups.slice(8,12).map((group) => (
+                        <CardDiscovery key={group.id} group={group}/> ))}
                     </div>
                 }
             </Groups>

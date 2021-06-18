@@ -6,41 +6,34 @@ export const Container = styled.div `
     display: flex;
     flex-direction: column;
     align-items: center;
-    h3 {
-        margin-top: 3vh;
-        background-color: #0a315d;
-        color: var(--white); 
-        width: 90vw;
-        border-radius: 5px;
-        text-align: center;
-        padding: 5px 0;
-        font-size: 3.5vh;
-    }
+    max-width: 1000px;
+    margin: 0 auto;
+    
     .input {
-        width: 90vw;
+        width: 90%;
         margin: 3vh 0;
         display: flex;
         justify-content: center;
 
         input {
             width: 43vw;
-            height: 6vh;
+            height: 7vh;
             border-radius: 5px 0 0 5px;
             border: 0;
             background-color: var(--black);
             color: var(--white); 
-            font-size: 2.7vh;
+            font-size: 2.8vh;
             text-align: center;
         }
 
         select {
             width: 24vw;
-            height: 6vh;
+            height: 7vh;
             background-color: #0a315d;
             color: var(--white); 
             border-radius: 0 5px 5px 0;
             border: 0;
-            font-size: 2.3vh;
+            font-size: 2.4vh;
 
             
         }
@@ -48,17 +41,18 @@ export const Container = styled.div `
         button {
             margin: 0 0 0 1vw;
             width: 25%;
-            height: 6vh;
+            height: 7vh;
             background-color: var(--black);
             color: var(--white); 
             border: 0;
             border-radius: 5px;
             font-size: 2.7vh;
+            cursor: pointer;
         }
     }
 
     span {
-        width: 90vw;
+        width: 90%;
         text-align: left;
         margin-bottom: 3vh;
         font-size: 3.4vh;
@@ -67,14 +61,14 @@ export const Container = styled.div `
     
 `;
 export const Groups = styled(Carousel)`
-    width: 90vw;
+    width: 90%;
 
     .groups {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         height: 60vh;
-        width: 90vw;
+        width: 100%;
     }
 
     .carousel-status {
