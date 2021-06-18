@@ -26,9 +26,9 @@ const MyAcount = () => {
         }
     }
     const forSchema = yup.object().shape({
-        usernameAtual: yup.string().required("Username Obrigatótio"),
-        password: yup.string().required("Campo Obrigatório"),
-        username: yup.string().required("Campo Obrigatório"),
+        usernameAtual: yup.string().required("Required Username"),
+        password: yup.string().required("Required"),
+        username: yup.string().required("Required"),
       })
     const{register, handleSubmit, formState:{errors}} = useForm({
         resolver: yupResolver(forSchema)
