@@ -24,6 +24,7 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     border-bottom: 2px solid black;
+    position: relative;
     strong {
       font-size: 1.3rem;
       color: white;
@@ -35,6 +36,22 @@ export const Container = styled.div`
       @media (min-width: 768px) {
         font-size: 2.1rem;
         height: 40px;
+      }
+    }
+    div {
+      width: 3vw;
+      height: 3vh;
+      border-radius: 50px;
+      /* background-color: white; */
+      position: absolute;
+      right: 20px;
+      top: 5px;
+      cursor: pointer;
+      @media (min-width: 768px) {
+        &:hover {
+          background-color: var(--orange);
+          color: black;
+        }
       }
     }
   }
@@ -53,9 +70,33 @@ export const Container = styled.div`
         font-size: 1.9rem;
       }
       span {
-        color: #758fe2;
+        color: var(--orange);
         @media (min-width: 768px) {
           font-size: 1.9rem;
+        }
+      }
+    }
+
+    .check {
+      display: flex;
+      width: 70%;
+      max-width: 195px;
+      margin: 0 auto;
+      justify-content: space-evenly;
+      align-items: center;
+      padding-left: 4px;
+      padding-right: 4px;
+      border-radius: 4px;
+      border: 2px solid black;
+      background-color: #0a315d;
+      @media (min-width: 768px) {
+        max-width: 25%;
+      }
+      span {
+        font-size: 1.1rem;
+        color: white;
+        @media (min-width: 768px) {
+          font-size: 1.7rem;
         }
       }
     }

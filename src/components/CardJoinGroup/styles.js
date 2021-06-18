@@ -5,7 +5,7 @@ export const Group = styled.div`
   display: flex;
   flex-direction: column;
   border: 2px solid black;
-  border-radius: 4px;
+  border-radius: 2px;
   min-height: 350px;
   height: 74vh;
   background-color: #ffffff;
@@ -93,7 +93,7 @@ export const Group = styled.div`
     .list {
       border: 2px solid black;
       height: 93%;
-      border-radius: 4px;
+      border-radius: 2px;
       padding: 4px;
       overflow: scroll;
       background-color: #ffffffa6;
@@ -121,7 +121,7 @@ export const Group = styled.div`
     margin: auto;
     button {
       width: 45%;
-      border: none;
+      border: 2px solid black;
       background-color: #0a315d;
       color: white;
       border-radius: 2px;
@@ -131,7 +131,12 @@ export const Group = styled.div`
       cursor: pointer;
       font-family: "Londrina Solid", cursive;
       @media (min-width: 768px) {
+        width: 40%;
         font-size: 1.6rem;
+        &:hover {
+          background-color: var(--orange);
+          color: black;
+        }
       }
     }
   }

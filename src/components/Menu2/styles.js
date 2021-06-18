@@ -111,18 +111,23 @@ export const LogoDesk = styled.div`
 
 export const ButtonMenu = styled.div`
   cursor: pointer;
-  width: 120px;
+  width: 140px;
   height: 100%;
   display: flex;
   justify-content: center;
 
-  align-items: flex-end;
+  align-items: center;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 
   span {
     font-size: 1.3rem;
+  }
+
+  &:hover {
+    background-color: var(--orange);
+    border-radius: 4px;
   }
 `;
 
@@ -133,4 +138,5 @@ export const ContainerDesk = styled.div`
   width: 70vw;
   padding: 4px;
   column-gap: 6px;
+  height: 100%;
 `;

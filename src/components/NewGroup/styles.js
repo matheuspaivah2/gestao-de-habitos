@@ -20,7 +20,7 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid black;
-    padding: 3vw;
+    padding: 3vh;
     strong {
       font-size: 1.1rem;
       color: white;
@@ -70,6 +70,12 @@ export const Container = styled.div`
     @media (min-width: 768px) {
       width: 50%;
       font-size: 1.6rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--orange);
+        color: black;
+      }
     }
   }
 `;

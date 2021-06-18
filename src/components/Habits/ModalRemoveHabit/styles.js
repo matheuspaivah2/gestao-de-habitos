@@ -9,6 +9,7 @@ export const Container = styled.div`
   padding: 0;
   justify-content: space-evenly;
   align-items: center;
+  max-height: 300px;
 
   .container__nameGoal {
     margin: 0;
