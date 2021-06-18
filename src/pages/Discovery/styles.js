@@ -22,7 +22,7 @@ export const Container = styled.div `
             border: 0;
             background-color: var(--black);
             color: var(--white); 
-            font-size: 2.8vh;
+            font-size: 1.2rem;
             text-align: center;
         }
 
@@ -33,8 +33,8 @@ export const Container = styled.div `
             color: var(--white); 
             border-radius: 0 5px 5px 0;
             border: 0;
-            font-size: 2.4vh;
-
+            font-size: 1.1rem;
+            font-weight: bold;
             
         }
 
@@ -42,12 +42,13 @@ export const Container = styled.div `
             margin: 0 0 0 1vw;
             width: 25%;
             height: 7vh;
-            background-color: var(--black);
+            background-color: #0a315d;
             color: var(--white); 
             border: 0;
             border-radius: 5px;
-            font-size: 2.7vh;
+            font-size:  1.2rem;
             cursor: pointer;
+            font-weight: bold;
         }
     }
 
@@ -55,7 +56,9 @@ export const Container = styled.div `
         width: 90%;
         text-align: left;
         margin-bottom: 3vh;
-        font-size: 3.4vh;
+        font-size:  1.3rem;
+        color: var(--white); 
+
     }
 
     

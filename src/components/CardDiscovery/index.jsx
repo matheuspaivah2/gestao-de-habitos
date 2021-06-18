@@ -8,8 +8,9 @@ const CardDiscovery = ({ group }) => {
     
     return(
         <Container onClick={() => setToggle(!toggle)}>
-            
-                    <h4>{name}</h4>
+                    <div className="name">
+                        <h4>{name}</h4>
+                    </div>
                     <div className="description">
                         <p>{description}</p>
                     </div>

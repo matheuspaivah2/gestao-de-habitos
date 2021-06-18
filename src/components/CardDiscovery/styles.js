@@ -13,15 +13,20 @@ export const Container = styled.div `
     background-color: #ffffff;
     cursor: pointer;
 
-    h4 {
+    .name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-color: #0a315d;
         color: var(--white); 
         width: 100%;
         border-radius: 1px 1px 0 0;
         overflow: hidden;
         height: 22%;
-        font-size: 2.8vh;
-        text-align: center;
+        h4 {
+            font-size: 3vh;
+            text-align: center;
+        }
     }
 
     p {
