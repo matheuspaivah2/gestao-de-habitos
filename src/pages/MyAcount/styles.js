@@ -1,14 +1,19 @@
 import styled, { keyframes } from "styled-components"
 
 export const Container = styled.div`
-    height:90vh;
+    height:70vh;
+    margin-top: 10vh;
     display:flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     flex-direction: column;
+    h1{
+        text-align:left;
+        margin-left: 6px;
+    }
 `
-const appearFromRight = keyframes`
+const appearFromUp = keyframes`
     from{
         opacity:0;
         width:100%;
@@ -25,18 +30,21 @@ export const AnimationContainer = styled.div`
     flex-direction:column;
     align-items: center;
     justify-content:center;
-    animation: ${appearFromRight} 1s;
+    animation: ${appearFromUp} 1s;
+    margin:20px;
     form{
-        width:160%;
+        width: 99vw;
         text-align:center;
-        max-width: 320px;
+        form{
+            margin: 0px;
+        }
     }
-    h3{
-        text-align: left;
+    h1{
+        margin-bottom:32px;
     }
     p{
         margin-left:4px;
-        margin-top:8px;
+        margin-top:2px;
         text-align: left;
         a{
             font-weight: bold;
@@ -45,7 +53,7 @@ export const AnimationContainer = styled.div`
     }
     @media(min-width: 800px) {
         form{
-            margin:80px;
+            margin:40px;
             width:540px;
             text-align:center;
         }
@@ -63,9 +71,7 @@ export const Button = styled.button`
   margin: 0 auto;
   text-align: center;
   font-family: "Londrina Solid", cursive;
-  @media(max-width: 400px) {
-        margin-top: ${({ margin }) => (margin)};
-    }
+  margin-top: ${({ margin }) => (margin)};
 `;
 
 

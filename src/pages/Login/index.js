@@ -1,7 +1,6 @@
 import{Link,Redirect,useHistory} from "react-router-dom"
-import Button from "../../components/Button"
 import Input from "../../components/Input"
-import {Container,AnimationContainer} from "./styles"
+import {Container,AnimationContainer, Button} from "./styles"
 import {FiUser, FiLock} from "react-icons/fi"
 import * as yup from 'yup';
 import { useForm } from "react-hook-form";

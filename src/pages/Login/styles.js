@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components"
 
 export const Container = styled.div`
-    height:100vh;
+    height:90vh;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -30,7 +30,7 @@ export const AnimationContainer = styled.div`
     justify-content:center;
     animation: ${appearFromRight} 1s;
     form{
-        width:105%;
+        width: 99vw;
         text-align:center;
     }
     h1{
@@ -54,3 +54,19 @@ export const AnimationContainer = styled.div`
 
 
 
+export const Button = styled.button`
+  border: 2px solid var(--black);
+  width: ${({ size }) => (size)};
+  padding: 1.6vh;
+  color: white;
+  margin-top: 1vh;
+  background-color: #0a315d;
+  font-size: 1.1rem;
+  border-radius: 2px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Londrina Solid", cursive;
+  @media(max-width: 400px) {
+        margin-top: ${({ margin }) => (margin)};
+    }
+`;

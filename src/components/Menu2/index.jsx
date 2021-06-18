@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
-import Logo from "../../assests/logoAzulEscuro.png";
+import Logo from "../../assests/logoMenuLaranja.png";
 import {
   Container,
   StyledToolBar,

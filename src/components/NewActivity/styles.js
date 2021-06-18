@@ -19,9 +19,10 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid black;
-    padding: 3vw;
+    padding: 3vh;
+
     strong {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: white;
       font-weight: bolder;
       @media (min-width: 768px) {
@@ -55,9 +56,9 @@ export const Container = styled.div`
   }
   button {
     width: 50%;
-    border: none;
+    border: 2px solid black;
     background-color: #0a315d;
-    border-radius: 4px;
+    border-radius: 2px;
     color: white;
     font-size: 1.1rem;
     font-weight: bolder;
@@ -66,6 +67,7 @@ export const Container = styled.div`
     @media (min-width: 768px) {
       width: 50%;
       font-size: 1.6rem;
+      cursor: pointer;
     }
   }
 `;

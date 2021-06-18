@@ -29,7 +29,7 @@ export const Container = styled.div`
       overflow: hidden;
       height: 25px;
       @media (min-width: 768px) {
-        font-size: 1.8rem;
+        font-size: 2.1rem;
         height: 40px;
       }
     }
@@ -111,7 +111,7 @@ export const Container = styled.div`
     column-gap: 2%;
     button {
       width: 45%;
-      border: none;
+      border: 2px solid black;
       background-color: #0a315d;
       color: white;
       border-radius: 2px;
