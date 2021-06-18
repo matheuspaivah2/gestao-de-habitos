@@ -7,11 +7,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { useMyGroups } from "../../providers/MyGroups";
 
 const NewGoal = ({ groupId, openNewGoal, setOpenNewGoal }) => {
   const handleClose = () => {
     setOpenNewGoal(false);
   };
+
+  const { loadGroups } = useMyGroups();
 
   const schema = yup.object().shape({
     title: yup
@@ -44,6 +47,8 @@ const NewGoal = ({ groupId, openNewGoal, setOpenNewGoal }) => {
       .then((response) => {
         toast.success("Meta cadastrado!");
         reset();
+        loadGroups();
+        handleClose();
       })
       .catch((e) => {
         toast.error("Error!");
@@ -108,17 +113,7 @@ const NewGoal = ({ groupId, openNewGoal, setOpenNewGoal }) => {
                 error={!!errors.title}
                 helperText={errors.title?.message}
               />
-              {/* <Input
-                required
-                margin="normal"
-                variant="outlined"
-                label="Difficulty"
-                size="small"
-                color="primary"
-                {...register("difficulty")}
-                error={!!errors.difficulty}
-                helperText={errors.difficulty?.message}
-              /> */}
+
               <MySelect
                 name="frequency"
                 {...register("difficulty")}

@@ -7,11 +7,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { useMyGroups } from "../../providers/MyGroups";
 
 const NewActivity = ({ groupId, openNewActivity, setOpenNewActivity }) => {
   const handleClose = () => {
     setOpenNewActivity(false);
   };
+
+  const { loadGroups } = useMyGroups();
 
   const schema = yup.object().shape({
     title: yup
@@ -41,6 +44,8 @@ const NewActivity = ({ groupId, openNewActivity, setOpenNewActivity }) => {
       .then((response) => {
         toast.success("Meta cadastrado!");
         reset();
+        loadGroups();
+        handleClose();
       })
       .catch((e) => {
         toast.error("Error!");
