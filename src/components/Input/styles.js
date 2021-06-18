@@ -39,6 +39,10 @@ export const InputContainer = styled.div`
     &::placeholder {
       color: var(--gray);
     }
+
+    @media (min-width: 768px) {
+      font-size: 1.3rem;
+    }
   }
   svg {
     margin-right: 10px;

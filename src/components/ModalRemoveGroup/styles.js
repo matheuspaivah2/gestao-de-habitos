@@ -70,6 +70,11 @@ export const Container = styled.div`
     @media (min-width: 768px) {
       width: 50%;
       font-size: 1.6rem;
+      cursor: pointer;
+      &:hover {
+        background-color: var(--orange);
+        color: black;
+      }
     }
   }
 `;

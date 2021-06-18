@@ -75,7 +75,7 @@ export const Container = styled.div`
   }
   button {
     width: 50%;
-    border: none;
+    border: 2px solid black;
     background-color: #0a315d;
     border-radius: 4px;
     color: white;
@@ -87,6 +87,10 @@ export const Container = styled.div`
       width: 50%;
       font-size: 1.6rem;
       cursor: pointer;
+      &:hover {
+        background-color: var(--orange);
+        color: black;
+      }
     }
   }
 `;

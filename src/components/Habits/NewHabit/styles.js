@@ -15,12 +15,11 @@ export const Button = styled.button`
   @media (min-width: 768px) {
     width: 60%;
     font-size: 1.6rem;
-  }
-
-  &:hover {
-    border: 2px solid #0a315d;
-    background-color: white;
-    color: #0a315d;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--orange);
+      color: black;
+    }
   }
 `;
 
@@ -57,7 +56,7 @@ export const Container = styled.div`
     padding-left: 3vh;
     padding-right: 2vh;
     border-bottom: 2px solid black;
-    
+
     strong {
       font-size: 1.1rem;
       color: white;
