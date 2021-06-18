@@ -2,6 +2,7 @@ import { Backdrop, Fade, makeStyles, Modal } from "@material-ui/core";
 import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { useMyGroups } from "../../providers/MyGroups";
 import { Group } from "./styles";
 
 const CardJoinGroup = ({ group, toggle, setToggle }) => {
@@ -9,6 +10,7 @@ const CardJoinGroup = ({ group, toggle, setToggle }) => {
     JSON.parse(localStorage.getItem("@GestãoDeHábitos:access")) || ""
   );
 
+  const { loadGroups } = useMyGroups();
   const joinGroup = () => {
     axios
       .post(
@@ -20,8 +22,11 @@ const CardJoinGroup = ({ group, toggle, setToggle }) => {
           },
         }
       )
-      .then((response) => toast.success("Joined Group!"))
-      .catch((err) => toast.error("Error!"));
+      .then((response) => {
+        toast.success("Joined Group!");
+        loadGroups();
+      })
+      .catch((err) => toast.error("You are already registered in this group!"));
   };
 
   const useStyles = makeStyles((theme) => ({

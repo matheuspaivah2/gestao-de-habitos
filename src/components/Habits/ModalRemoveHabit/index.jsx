@@ -4,26 +4,20 @@ import Fade from "@material-ui/core/Fade";
 import { makeStyles, Modal } from "@material-ui/core";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { useMyGroups } from "../../providers/MyGroups";
+import { useHabits } from "../../../providers/habits";
 
-const Activity = ({
-  activity,
-  setModalActivity,
-  modalActivity,
-  setActivity,
-}) => {
+const ModalRemoveHabit = ({ openRemoveHabit, setOpenRemoveHabit, habit }) => {
   const handleClose = () => {
-    setModalActivity(false);
-    setActivity([]);
+    setOpenRemoveHabit(false);
   };
 
-  const { loadGroups } = useMyGroups();
+  const { getHabits } = useHabits();
 
   const token = localStorage.getItem("@GestãoDeHábitos:access") || "";
   const handleDelete = () => {
     axios
       .delete(
-        `https://kabit-api.herokuapp.com/activities/${activity.id}/`,
+        `https://kabit-api.herokuapp.com/habits/${habit.id}/`,
 
         {
           headers: {
@@ -33,8 +27,8 @@ const Activity = ({
       )
       .then((response) => {
         toast.success("Deleted");
-        setModalActivity(false);
-        loadGroups();
+        setOpenRemoveHabit(false);
+        getHabits();
       })
       .catch((e) => {
         toast.error("Error!");
@@ -47,6 +41,7 @@ const Activity = ({
       alignItems: "center",
       justifyContent: "center",
       maxWidth: "500px",
+
       margin: "0 auto",
     },
     paper: {
@@ -62,14 +57,12 @@ const Activity = ({
   }));
   const classes = useStyles();
 
-  // console.log(activity.realization_time.toLocaleDateString("pt-BR"));
-
   return (
     <Modal
       aria-labelledby="transition-modal-title"
       aria-describedby="transition-modal-description"
       className={classes.modal}
-      open={modalActivity}
+      open={openRemoveHabit}
       onClose={handleClose}
       closeAfterTransition
       BackdropComponent={Backdrop}
@@ -77,17 +70,15 @@ const Activity = ({
         timeout: 500,
       }}
     >
-      <Fade in={modalActivity}>
+      <Fade in={openRemoveHabit}>
         <div className={classes.paper}>
           <Container>
             <div className="container__nameGoal">
-              <strong>Activity</strong>
+              <strong>Remove Habit</strong>
               <div onClick={() => handleClose()}>X</div>
             </div>
 
             <div className="container__infoGoal">
-              <h2>{activity.title}</h2>
-              <p>{activity.realization_time}</p>
               <button onClick={() => handleDelete()}>Delete</button>
             </div>
           </Container>
@@ -97,4 +88,4 @@ const Activity = ({
   );
 };
 
-export default Activity;
+export default ModalRemoveHabit;

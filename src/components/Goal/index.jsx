@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { buildStyles } from "react-circular-progressbar";
+import { useMyGroups } from "../../providers/MyGroups";
 const Goal = ({ goal, setModalGoal, modalGoal, setGoal }) => {
   const [disabledCheck, setDisabledCheck] = useState(false);
   const [checked, setChecked] = useState(localStorage.getItem("dailyCheck"));
@@ -15,6 +16,8 @@ const Goal = ({ goal, setModalGoal, modalGoal, setGoal }) => {
   useEffect(() => {
     setChecked(localStorage.getItem("dailyCheck"));
   }, []);
+
+  const { loadGroups } = useMyGroups();
 
   const handleCheck = (e) => {
     setCounter(counter + 14);
@@ -57,6 +60,7 @@ const Goal = ({ goal, setModalGoal, modalGoal, setGoal }) => {
       .then((response) => {
         toast.success("Deleted");
         setModalGoal(false);
+        loadGroups();
       })
       .catch((e) => {
         toast.error("Error!");
