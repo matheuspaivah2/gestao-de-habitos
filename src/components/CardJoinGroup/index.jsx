@@ -22,7 +22,8 @@ const CardJoinGroup = ({group, toggle, setToggle}) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          width: "",
+          maxWidth: "1000px",
+          margin: "0 auto",
         },
         paper: {
           backgroundColor: theme.palette.background.paper,
@@ -56,6 +57,7 @@ const CardJoinGroup = ({group, toggle, setToggle}) => {
                     <Group>
                         <div className="container--NameGroup">
                             <strong>{group.name}</strong>
+                            <div onClick={() => setToggle(!toggle)}>X</div>
                         </div>
                         <p>{group.description}</p>
                         <span className="category">{group.category}</span>
@@ -87,7 +89,6 @@ const CardJoinGroup = ({group, toggle, setToggle}) => {
                         </div>
                         <div className="buttons__Add">
                             <button onClick={joinGroup}>Join Group</button>
-                            <button onClick={() => setToggle(!toggle)}>Close</button>
                         </div>
                     </Group>
                 </div>
