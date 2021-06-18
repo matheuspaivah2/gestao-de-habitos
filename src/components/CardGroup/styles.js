@@ -44,6 +44,10 @@ export const Container = styled.div`
       top: 5px;
       cursor: pointer;
       @media (min-width: 768px) {
+        &:hover {
+          background-color: var(--orange);
+          color: black;
+        }
       }
     }
   }
@@ -135,6 +139,11 @@ export const Container = styled.div`
       font-family: "Londrina Solid", cursive;
       @media (min-width: 768px) {
         font-size: 1.6rem;
+
+        &:hover {
+          background-color: var(--orange);
+          color: black;
+        }
       }
     }
   }

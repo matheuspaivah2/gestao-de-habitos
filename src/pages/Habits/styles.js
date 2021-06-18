@@ -98,5 +98,10 @@ export const Button = styled.button`
 
   @media (min-width: 768px) {
     font-size: 1.4rem;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--orange);
+      color: black;
+    }
   }
 `;

@@ -53,7 +53,7 @@ export const Container = styled.div`
         font-size: 1.9rem;
       }
       span {
-        color: #758fe2;
+        color: var(--orange);
         @media (min-width: 768px) {
           font-size: 1.9rem;
         }

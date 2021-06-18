@@ -24,9 +24,9 @@ const Card = ({ habit }) => {
             value={habit.how_much_achieved}
             text={`${habit.how_much_achieved}%`}
             styles={buildStyles({
-              pathColor: "#0a315d",
+              pathColor: "var(--orange)",
               textColor: "#0a315d",
-              trailColor: "#FFC862",
+              trailColor: "rgb(162 169 170)",
             })}
           />
         </div>

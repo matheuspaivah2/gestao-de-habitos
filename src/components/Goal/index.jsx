@@ -112,9 +112,9 @@ const Goal = ({ goal, setModalGoal, modalGoal, setGoal }) => {
                   value={counter}
                   text={`${counter}%`}
                   styles={buildStyles({
-                    pathColor: "#0a315d",
+                    pathColor: "var(--orange)",
                     textColor: "#0a315d",
-                    trailColor: "#FFC862",
+                    trailColor: "rgb(162 169 170)",
                   })}
                 />
                 <div className="check">
