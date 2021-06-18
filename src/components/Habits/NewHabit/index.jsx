@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Button, MySelect, Container, Input } from "./styles";
 import { toast } from "react-toastify";
 import { useContext } from "react";
-import { HabitsContext } from "../../../providers/habits";
+import { HabitsContext, useHabits } from "../../../providers/habits";
 
 const NewHabit = ({ handleClose }) => {
   const formSchema = yup.object().shape({
@@ -35,13 +35,13 @@ const NewHabit = ({ handleClose }) => {
     };
     api.defaults.headers.authorization = `Bearer ${token}`;
     api
-    .post("/habits/", data)
-    .then((res) => {
-      toast.success("Habit created");
-    })
-    .catch((err) => toast.error("Error in creating the habit"));
-    
-    getHabits()
+      .post("/habits/", data)
+      .then((res) => {
+        toast.success("Habit created");
+        getHabits();
+      })
+      .catch((err) => toast.error("Error in creating the habit"));
+
     handleClose();
   };
 

@@ -74,15 +74,14 @@ export const Container = styled.div`
       column-gap: 4vw;
       justify-content: center;
       align-items: center;
-      margin-top: 4vh;
+      margin-top: 0vh;
       @media (min-width: 768px) {
-        max-width: 90%;
         column-gap: 1vw;
       }
       .check {
         display: flex;
-        width: 65%;
-        max-width: 155px;
+        width: 70%;
+        max-width: 195px;
 
         justify-content: space-evenly;
         align-items: center;

@@ -2,18 +2,18 @@ import { Container, Input } from "./styles";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { makeStyles, Modal } from "@material-ui/core";
-import { useState } from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { useMyGroups } from "../../providers/MyGroups";
 
 const NewGroup = ({ openNewGroup, setOpenNewGroup }) => {
   const handleClose = () => {
     setOpenNewGroup(false);
   };
-
+  const { loadGroups } = useMyGroups();
   const schema = yup.object().shape({
     name: yup
       .string()
@@ -47,6 +47,7 @@ const NewGroup = ({ openNewGroup, setOpenNewGroup }) => {
       .then((response) => {
         toast.success("Grupo cadastrado!");
         reset();
+        loadGroups();
       })
       .catch((e) => {
         toast.error("Error!");
