@@ -4,7 +4,6 @@ import { TextField, withStyles } from "@material-ui/core";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  /* margin: 0 auto; */
   background-color: white;
   width: 100%;
   height: 50vh;
@@ -84,7 +83,6 @@ export const Input = withStyles({
   },
   "@media (min-width: 768px)": {
     root: {
-      // width: "90%",
       "& .MuiOutlinedInput-root": {
         height: "7vh",
       },

@@ -46,7 +46,7 @@ export const Container = styled.div`
       text-align: center;
       width: 100%;
       max-height: 100%;
-      overflow: scroll;
+      overflow: hidden;
     }
   }
 `;

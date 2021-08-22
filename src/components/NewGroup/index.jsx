@@ -135,12 +135,10 @@ const NewGroup = ({ openNewGroup, setOpenNewGroup }) => {
                 error={!!errors.category}
                 helperText={errors.category?.message}
               />
-              {/* <div className="container__buttons"> */}
-              {/* <button onClick={() => handleClose()}>Back</button> */}
+
               <button type="submit" className="bt__submit">
                 Register
               </button>
-              {/* </div> */}
             </form>
           </Container>
         </div>

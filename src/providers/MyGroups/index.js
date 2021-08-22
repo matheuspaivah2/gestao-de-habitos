@@ -1,5 +1,11 @@
 import axios from "axios";
-import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 export const MyGroupsContext = createContext([]);
 
@@ -8,7 +14,7 @@ export const MyGroupsProvider = ({ children }) => {
 
   const loadGroups = useCallback(() => {
     const token = localStorage.getItem("@GestãoDeHábitos:access") || "";
-    console.log(JSON.parse(token));
+
     axios
       .get("https://kabit-api.herokuapp.com/groups/subscriptions/", {
         headers: {
@@ -16,7 +22,6 @@ export const MyGroupsProvider = ({ children }) => {
         },
       })
       .then((res) => {
-        console.log(res);
         setMyGroups(res.data);
       })
       .catch((err) => {
@@ -27,8 +32,9 @@ export const MyGroupsProvider = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem("@GestãoDeHábitos:access") || "";
     if (token) {
-    loadGroups();
+      loadGroups();
     }
+    // eslint-disable-next-line
   }, []);
 
   return (

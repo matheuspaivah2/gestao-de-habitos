@@ -5,7 +5,6 @@ import "react-circular-progressbar/dist/styles.css";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  /* margin: 0 auto; */
   background-color: white;
   width: 100%;
   height: 60vh;
@@ -126,7 +125,6 @@ export const Container = styled.div`
 `;
 
 export const Progress = styled(CircularProgressbar)`
-  /* width: 100px; */
   height: 15vh;
   width: 25vw;
   align-self: center;

@@ -4,10 +4,9 @@ import { TextField, withStyles } from "@material-ui/core";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  /* margin: 0 auto; */
   background-color: white;
   width: 100%;
-  height: 60vh;
+  height: ${(props) => (props.unsub ? "30vh" : "60vh")};
   padding: 0;
 
   .container__nameGoal {
@@ -37,6 +36,29 @@ export const Container = styled.div`
 
       @media (min-width: 768px) {
         font-size: 1.9rem;
+      }
+    }
+  }
+
+  .bt_unsubscribe {
+    width: 80%;
+    border: 2px solid black;
+    background-color: #0a315d;
+    border-radius: 3px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bolder;
+    padding: 8px;
+    font-family: "Londrina Solid", cursive;
+    margin: 20% auto;
+
+    @media (min-width: 768px) {
+      width: 50%;
+      font-size: 1.6rem;
+      cursor: pointer;
+      &:hover {
+        background-color: var(--orange);
+        color: black;
       }
     }
   }
@@ -88,7 +110,6 @@ export const Input = withStyles({
   },
   "@media (min-width: 768px)": {
     root: {
-      // width: "90%",
       "& .MuiOutlinedInput-root": {
         height: "7vh",
       },

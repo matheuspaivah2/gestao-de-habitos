@@ -38,7 +38,6 @@ export const Container = styled.div`
       width: 3vw;
       height: 3vh;
       border-radius: 50px;
-      /* background-color: white; */
       position: absolute;
       right: 20px;
       top: 5px;
@@ -102,7 +101,7 @@ export const Container = styled.div`
       height: 93%;
       border-radius: 4px;
       padding: 4px;
-      overflow: scroll;
+      overflow-y: scroll;
       background-color: #ffffffa6;
       li {
         color: black;

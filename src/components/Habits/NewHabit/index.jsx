@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Button, MySelect, Container, Input } from "./styles";
 import { toast } from "react-toastify";
 import { useContext } from "react";
-import { HabitsContext, useHabits } from "../../../providers/habits";
+import { HabitsContext } from "../../../providers/habits";
 
 const NewHabit = ({ handleClose }) => {
   const formSchema = yup.object().shape({

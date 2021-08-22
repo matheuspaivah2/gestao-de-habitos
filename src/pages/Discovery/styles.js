@@ -25,6 +25,7 @@ export const Container = styled.div`
       font-size: 1rem;
       text-align: left;
       padding-left: 8px;
+      font-family: "Londrina Solid", cursive;
 
       @media (min-width: 768px) {
         width: 43vw;
@@ -41,6 +42,7 @@ export const Container = styled.div`
       border: 2px solid black;
       font-size: 0.8rem;
       font-weight: bold;
+      font-family: "Londrina Solid", cursive;
 
       @media (min-width: 768px) {
         width: 24vw;
@@ -60,6 +62,7 @@ export const Container = styled.div`
       font-size: 1rem;
       cursor: pointer;
       font-weight: bold;
+      font-family: "Londrina Solid", cursive;
 
       @media (min-width: 768px) {
         font-size: 1.3rem;
