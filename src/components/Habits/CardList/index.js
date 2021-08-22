@@ -11,6 +11,7 @@ const CardList = () => {
 
   useEffect(() => {
     getHabits();
+    // eslint-disable-next-line
   }, []);
 
   return (

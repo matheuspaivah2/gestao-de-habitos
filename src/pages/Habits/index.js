@@ -1,11 +1,7 @@
 import { Modal, Backdrop } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Container, {
-  Button,
-  AnimationContainer,
-  BackgroundHeading,
-} from "./styles";
-
+import Container, { Button } from "./styles";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import CardList from "../../components/Habits/CardList";
 import NewHabit from "../../components/Habits/NewHabit";
@@ -40,10 +36,20 @@ const Habits = () => {
     return <Redirect to="/login" />;
   }
 
+  const anima = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delayChildren: 1,
+      },
+    },
+  };
+
   return (
     <>
-      <Container>
-        <AnimationContainer>
+      <motion.div variants={anima} initial="hidden" animate="show">
+        <Container>
           <Button onClick={handleOpen}>New habit</Button>
 
           <Modal
@@ -60,9 +66,10 @@ const Habits = () => {
           >
             <NewHabit handleClose={handleClose} opne={open} />
           </Modal>
-        </AnimationContainer>
-      </Container>
-      <CardList />
+        </Container>
+
+        <CardList />
+      </motion.div>
     </>
   );
 };

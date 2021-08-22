@@ -6,7 +6,6 @@ import { useState } from "react";
 import ModalRemoveHabit from "../ModalRemoveHabit";
 import { toast } from "react-toastify";
 import api from "../../../services/api";
-import { useHabits } from "../../../providers/habits";
 import { useEffect } from "react";
 
 const Card = ({ habit }) => {
@@ -17,7 +16,6 @@ const Card = ({ habit }) => {
   );
   const [counter, setCounter] = useState(0);
 
-  const { token } = useHabits();
   useEffect(() => {
     setChecked(localStorage.getItem("dailyCheckHabit"));
   }, []);

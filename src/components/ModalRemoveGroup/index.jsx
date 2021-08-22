@@ -20,16 +20,16 @@ const UpdateGroup = ({ openUpdateGroup, setOpenUpdateGroup, group }) => {
   const schema = yup.object().shape({
     name: yup
       .string()
-      .min(2, "Mínimo 2 caracteres")
-      .required("Campo obrigatório"),
+      .min(2, "Minimum 2 characters ")
+      .required("Required field"),
     description: yup
       .string()
-      .min(6, "Mínimo seis caracters")
-      .required("Campo obrigatório"),
+      .min(6, "Minimum 6 characters")
+      .required("Required fieldo"),
     category: yup
       .string()
-      .min(2, "Mínimo dois caracters")
-      .required("Campo obrigatório"),
+      .min(2, "Minimum 2 characters")
+      .required("Required field"),
   });
   const {
     register,
@@ -42,7 +42,7 @@ const UpdateGroup = ({ openUpdateGroup, setOpenUpdateGroup, group }) => {
   const token = localStorage.getItem("@GestãoDeHábitos:access") || "";
   const handleForm = (data) => {
     axios
-      .update(`https://kabit-api.herokuapp.com/groups/${group.id}`, data, {
+      .patch(`https://kabit-api.herokuapp.com/groups/${group.id}/`, data, {
         headers: {
           Authorization: `Bearer ${JSON.parse(token)}`,
         },
@@ -72,6 +72,7 @@ const UpdateGroup = ({ openUpdateGroup, setOpenUpdateGroup, group }) => {
       .then((response) => {
         toast.success("Deleted");
         handleClose();
+        loadGroups();
       })
       .catch((e) => {
         toast.error("Error!");
@@ -115,16 +116,21 @@ const UpdateGroup = ({ openUpdateGroup, setOpenUpdateGroup, group }) => {
     >
       <Fade in={openUpdateGroup}>
         <div className={classes.paper}>
-          {group.creator.id === user_id ? (
-            <Container>
+          {group.creator.id !== user_id ? (
+            <Container unsub={true}>
               <div className="container__nameGoal">
                 <strong>Unsubscribe Group</strong>
                 <div onClick={() => handleClose()}>X</div>
               </div>
-              <button onClick={() => handleUnsubscribe()}>Unsubscribe</button>
+              <button
+                className="bt_unsubscribe"
+                onClick={() => handleUnsubscribe()}
+              >
+                Unsubscribe
+              </button>
             </Container>
           ) : (
-            <Container>
+            <Container unsub={false}>
               <div className="container__nameGoal">
                 <strong>Update Group</strong>
                 <div onClick={() => handleClose()}>X</div>

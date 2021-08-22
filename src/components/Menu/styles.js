@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { Toolbar, withStyles, SwipeableDrawer } from "@material-ui/core";
-import BackgroundMenu from "../../assests/backgroundMenu.jpg";
-import { GiHamburgerMenu } from "react-icons/gi";
-export const Button = styled.div`
+
+export const LogoButton = styled.div`
   width: 50px;
   height: 50px;
   position: absolute;
@@ -13,8 +12,6 @@ export const Button = styled.div`
 
 export const StyledToolBar = withStyles({
   root: {
-    // backgroundColor: "white",
-    // backgroundImage: `url(${BackgroundMenu})`,
     backgroundColor: "#fdf5ff",
     backgroundImage: `url${"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 200 200'%3E%3Cpolygon fill='%23daeffa' points='100 0 0 100 100 100 100 200 200 100 200 0'/%3E%3C/svg%3E"}`,
     width: "25vw",
@@ -38,11 +35,10 @@ export const ContainerButtons = styled.div`
   align-items: center;
   justify-content: space-evenly;
 `;
-export const Button2 = styled.div`
+export const Button = styled.div`
   cursor: pointer;
   width: 98%;
   height: 8vh;
-  /* background-image: url(${({ backImg }) => backImg}); */
   display: flex;
   justify-content: center;
   align-items: center;

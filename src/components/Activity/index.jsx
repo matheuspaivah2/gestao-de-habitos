@@ -62,8 +62,6 @@ const Activity = ({
   }));
   const classes = useStyles();
 
-  // console.log(activity.realization_time.toLocaleDateString("pt-BR"));
-
   return (
     <Modal
       aria-labelledby="transition-modal-title"

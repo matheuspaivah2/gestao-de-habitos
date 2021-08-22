@@ -4,10 +4,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Logo from "../../assests/logoMenuLaranja.png";
 import {
-  Container,
   StyledToolBar,
   Button,
-  Button2,
   ContainerButtons,
   LogoMenu,
   ContMenu,
@@ -99,7 +97,7 @@ export default function SwipeableTemporaryDrawer() {
   const list = (anchor) => (
     <div
       className={clsx(classes.list, {
-        [classes.fullList]: anchor === "top" || anchor === "bottom",
+        [classes.fullList]: anchor === "top",
       })}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
@@ -111,10 +109,7 @@ export default function SwipeableTemporaryDrawer() {
             <img src={Logo} alt="Logo" />
           </LogoMenu>
           <ContainerButtons>
-            <Button2
-              //   backImg={User}
-              onClick={() => handleClick("/dashboard")}
-            >
+            <Button onClick={() => handleClick("/habits")}>
               <FaRegUser
                 style={{
                   width: "100%",
@@ -122,10 +117,11 @@ export default function SwipeableTemporaryDrawer() {
                   color: "white",
                 }}
               />
-            </Button2>
-            <Button2
-              //   backImg={Group}
-              onClick={() => handleClick("/groups")}
+            </Button>
+            <Button
+              onClick={() => {
+                handleClick("/groups");
+              }}
             >
               <FiUsers
                 style={{
@@ -134,10 +130,11 @@ export default function SwipeableTemporaryDrawer() {
                   color: "white",
                 }}
               />
-            </Button2>
-            <Button2
-              //   backImg={Rocket}
-              onClick={() => handleClick("/discovery")}
+            </Button>
+            <Button
+              onClick={() => {
+                handleClick("/discovery");
+              }}
             >
               <IoRocketOutline
                 style={{
@@ -146,12 +143,9 @@ export default function SwipeableTemporaryDrawer() {
                   color: "white",
                 }}
               />
-            </Button2>
+            </Button>
           </ContainerButtons>
-          <Button2
-            // backImg={Settings}
-            onClick={() => handleClick("/myacount")}
-          >
+          <Button onClick={() => handleClick("/myacount")}>
             <IoSettingsOutline
               style={{
                 width: "100%",
@@ -159,7 +153,7 @@ export default function SwipeableTemporaryDrawer() {
                 color: "white",
               }}
             />
-          </Button2>
+          </Button>
         </ContMenu>
       </StyledToolBar>
     </div>
@@ -171,7 +165,6 @@ export default function SwipeableTemporaryDrawer() {
         <>
           {["left"].map((anchor) => (
             <React.Fragment key={anchor}>
-              {/* <Button onClick={toggleDrawer(anchor, true)} styles={{}}></Button> */}
               <BtMenu onClick={toggleDrawer(anchor, true)}>
                 <img src={Logo} alt="Logo" />
               </BtMenu>

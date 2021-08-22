@@ -1,16 +1,15 @@
 import { Container } from "./styles";
 import CardGroup from "../CardGroup";
-import { useContext } from "react";
 import { useEffect } from "react";
 import { useMyGroups } from "../../providers/MyGroups";
 import CardGroupDefault from "../CardGroupDefault";
-import { useState } from "react";
+
 const CardGroupList = () => {
   const { myGroups, loadGroups } = useMyGroups();
 
   useEffect(() => {
     loadGroups();
-    console.log(myGroups);
+    // eslint-disable-next-line
   }, []);
 
   return (

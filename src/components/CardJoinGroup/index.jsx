@@ -1,13 +1,15 @@
 import { Backdrop, Fade, makeStyles, Modal } from "@material-ui/core";
 import axios from "axios";
-import { useState } from "react";
 import { toast } from "react-toastify";
 import { useMyGroups } from "../../providers/MyGroups";
 import { Group } from "./styles";
 
-const CardJoinGroup = ({ group, toggle, setToggle }) => {
-  const [token] = useState(
-    JSON.parse(localStorage.getItem("@GestãoDeHábitos:access")) || ""
+const CardJoinGroup = ({ group, openModalJoin, setOpenModalJoin }) => {
+  const closeModal = () => {
+    setOpenModalJoin(false);
+  };
+  const token = JSON.parse(
+    localStorage.getItem("@GestãoDeHábitos:access") || ""
   );
 
   const { loadGroups } = useMyGroups();
@@ -25,6 +27,7 @@ const CardJoinGroup = ({ group, toggle, setToggle }) => {
       .then((response) => {
         toast.success("Joined Group!");
         loadGroups();
+        closeModal();
       })
       .catch((err) => toast.error("You are already registered in this group!"));
   };
@@ -55,20 +58,20 @@ const CardJoinGroup = ({ group, toggle, setToggle }) => {
       aria-labelledby="transition-modal-title"
       aria-describedby="transition-modal-description"
       className={classes.modal}
-      open={toggle}
-      onClose={!toggle}
+      open={openModalJoin}
+      onClose={closeModal}
       closeAfterTransition
       BackdropComponent={Backdrop}
       BackdropProps={{
         timeout: 500,
       }}
     >
-      <Fade in={toggle}>
+      <Fade in={openModalJoin}>
         <div className={classes.paper}>
           <Group>
             <div className="container--NameGroup">
               <strong>{group.name}</strong>
-              <div onClick={() => setToggle(!toggle)}>X</div>
+              <div onClick={() => closeModal()}>X</div>
             </div>
             <p>{group.description}</p>
             <span className="category">{group.category}</span>

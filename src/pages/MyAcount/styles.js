@@ -54,7 +54,7 @@ export const AnimationContainer = styled.div`
     @media (min-width: 768px) {
       font-size: 1.5rem;
     }
-    a {
+    span {
       font-weight: bold;
       color: var(--orange);
     }
@@ -80,6 +80,7 @@ export const Button = styled.button`
   text-align: center;
   font-family: "Londrina Solid", cursive;
   margin-top: ${({ margin }) => margin};
+  cursor: pointer;
 
   @media (min-width: 768px) {
     font-size: 1.5rem;

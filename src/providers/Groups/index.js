@@ -4,27 +4,26 @@ import { createContext, useContext, useEffect, useState } from "react";
 const GroupsContext = createContext();
 
 export const GroupsProvider = ({ children }) => {
-    const [groups, setGroups] = useState([]);
-    const [next, setNext ] = useState("https://kabit-api.herokuapp.com/groups/");
+  const [groups, setGroups] = useState([]);
+  const [next, setNext] = useState("https://kabit-api.herokuapp.com/groups/");
 
-    const getGroups = () => {
-        axios
-            .get(next)
-            .then((response) => {
-                setGroups([...groups, response.data.results])
-                response.data.next && setNext(response.data.next);
-            });
-    }
+  const getGroups = () => {
+    axios.get(next).then((response) => {
+      setGroups([...groups, response.data.results]);
+      response.data.next && setNext(response.data.next);
+    });
+  };
 
-    useEffect(() => {
-        getGroups();
-    }, [next]);
+  useEffect(() => {
+    getGroups();
+    // eslint-disable-next-line
+  }, [next]);
 
-    return(
-        <GroupsContext.Provider value={{groups}}>
-            {children}
-        </GroupsContext.Provider>
-    );
-}
+  return (
+    <GroupsContext.Provider value={{ groups }}>
+      {children}
+    </GroupsContext.Provider>
+  );
+};
 
 export const useGroups = () => useContext(GroupsContext);

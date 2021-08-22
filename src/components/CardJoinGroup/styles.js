@@ -95,7 +95,8 @@ export const Group = styled.div`
       height: 93%;
       border-radius: 2px;
       padding: 4px;
-      overflow: scroll;
+      overflow-y: scroll;
+      overflow-x: hidden;
       background-color: #ffffffa6;
       li {
         color: black;
